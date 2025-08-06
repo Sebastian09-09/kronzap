@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KronZap — Automation that Works</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.ico">
+
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="KronZap builds automation tools, bots, and AI agents to scale your business faster.">
+  <meta name="keywords" content="automation, discord bots, AI agents, business automation, workflow automation, KronZap, custom bots, task automation">
+  <meta name="author" content="KronZap">
+  <meta property="og:title" content="KronZap — Automation that Works">
+  <meta property="og:description" content="We build bots, workflows, and automation tools that save time and scale your operations.">
+  <meta property="og:image" content="images/share-preview.png">
+  <meta property="og:type" content="website">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo.png" style="max-height: 150px;" alt="logo">
+        </a>
+    </div>
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ✅ Image Carousel -->
+  <section class="carousel">
+    <div class="carousel-container">
+      <img src="images/slide1.png" class="carousel-slide active" alt="Slide 1">
+      <img src="images/slide2.png" class="carousel-slide" alt="Slide 2">
+      <img src="images/slide3.png" class="carousel-slide" alt="Slide 3">
+      <img src="images/slide4.png" class="carousel-slide" alt="Slide 4">
+      <img src="images/slide5.png" class="carousel-slide" alt="Slide 5">
+    </div>
+  </section>
+
+  <!-- ✅ Hero Section -->
+  <section class="hero">
+    <h1>Automate Everything. Grow Faster.</h1>
+    <p>We build bots, workflows, and automation tools that save time and scale your operations.</p>
+    <button class="cta-btn" onclick="location.href='contact.html'">Get in Touch</button>
+  </section>
+
+  <!-- ✅ Why Choose Us -->
+  <section class="section why-us">
+    <h2>Why Choose KronZap?</h2>
+    <ul>
+      <li>We build automation that fits your business and goals</li>
+      <li>Experience in Bots, AI tools, and process automation</li>
+      <li>We focus on solving real problems, not just writing code</li>
+      <li>Our systems are fast, simple, and easy to use</li>
+      <li>Clear communication and a strong focus on results</li>
+    </ul>
+  </section>
+
+  <!-- ✅ CTA Section -->
+  <section class="cta-banner">
+    <h3>Have something to automate?</h3>
+    <button class="cta-btn" onclick="location.href='contact.html'">Let's Talk</button>
+  </section>
+
+  <footer>
+    © 2025 KronZap. All rights reserved.
+  </footer>
+
+  <!-- ✅ Carousel Script -->
+  <script>
+    const slides = document.querySelectorAll('.carousel-slide');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 3000);
+  </script>
+
+</body>
+</html>

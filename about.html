@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — KronZap</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo.png" style="max-height: 150px;" alt="logo">
+        </a>
+    </div>
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>About KronZap</h2>
+    <p>
+      KronZap is your automation partner. From Bots to AI-powered agents and custom scripts,
+      we eliminate repetitive work so you can focus on what matters.
+    </p>
+  </section>
+
+
+    <section class="section">
+    <h3>Past Projects</h3>
+    <div class="carousel-container">
+        <button class="carousel-btn prev" onclick="scrollCarousel(-1)">‹</button>
+        
+        <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-item">📩 Instagram Automation – Send DMs</div>
+        <div class="carousel-item">🧠 Chrome Extension – Record & Playback User Activity</div>
+        <div class="carousel-item">🗺️ Auto Cheapest Travel Route Finder – Kiwi.com + Starcars</div>
+        <div class="carousel-item">📈 Crypto Monitor – Upbit & Binance</div>
+        <div class="carousel-item">📚 Comic Reader Bot – Inside Discord</div>
+        <div class="carousel-item">📍 One Click Google Maps Scraper</div>
+        <div class="carousel-item">📸 Instagram Scraper</div>
+        <div class="carousel-item">🤖 Discord Selfbots</div>
+        <div class="carousel-item">🔐 LinkedIn Session + Cookie Capture via Chrome Ext</div>
+        <div class="carousel-item">⚙️ MultiThreaded Comic Scraper</div>
+        <div class="carousel-item">🗃️ US Census Data Scraper</div>
+        <div class="carousel-item">🌐 Travel Data Scrapers – Trip.com, Booking.com, Skyscanner</div>
+        </div>
+
+        <button class="carousel-btn next" onclick="scrollCarousel(1)">›</button>
+    </div>
+    </section>
+  
+  <section class="section">
+    <h3>Our Mission</h3>
+    <p>
+        KronZap was born from a simple idea: automate the boring so businesses can scale the impactful.
+        Whether it’s scraping, workflow bots, or AI agents — we make tools that save time and unlock growth.
+    </p>
+  </section>
+
+
+
+  <footer>
+    © 2025 KronZap. All rights reserved.
+  </footer>
+</body>
+<script>
+  let currentIndex = 0;
+  const carousel = document.getElementById('carouselTrack');
+  const items = carousel.querySelectorAll('.carousel-item');
+
+  function scrollCarousel(direction) {
+    const totalItems = items.length;
+    const itemWidth = items[0].offsetWidth + 16; // 16px margin (0.5rem * 2)
+    
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex >= totalItems) currentIndex = totalItems - 1;
+
+    carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+  }
+</script>
+
+
+</html>

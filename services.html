@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services — KronZap</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo.png" style="max-height: 150px;" alt="logo">
+        </a>
+    </div>
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>Our Services</h2>
+    <p>
+      We help businesses save time and scale faster with tailored automation solutions. Our key services include:<br/><br/>
+      • Custom Bots<br/>
+      • Business Workflow Automation<br/>
+      • Robotic Process Automation (RPA)<br/>
+      • Browser Extensions<br/>
+      • Browser Automation Scripts<br/>
+      • API Integration & Request Handling<br/>
+      • Data Scraping & Extraction<br/>
+      • Automation Consulting
+    </p>
+  </section>
+
+  <section class="testimonial-wrapper">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial-slider" id="testimonialSlider">
+        <div class="testimonial">
+          <p>"KronZap automated our Discord completely. Saved hours!"</p>
+          <div class="testimonial-author">— Sarah, Community Manager</div>
+        </div>
+        <div class="testimonial">
+          <p>"Custom scraping was top-notch. Fast delivery and clean."</p>
+          <div class="testimonial-author">— Alex, Data Analyst</div>
+        </div>
+        <div class="testimonial">
+          <p>"RPA reduced our manual work by 70%. Highly recommend."</p>
+          <div class="testimonial-author">— Rajeev, Ops Lead</div>
+        </div>
+        <div class="testimonial">
+          <p>"Their extension is now part of our daily workflow."</p>
+          <div class="testimonial-author">— Elena, Marketing</div>
+        </div>
+        <div class="testimonial">
+          <p>"Fast communication, reliable code. Great experience."</p>
+          <div class="testimonial-author">— Marcus, Founder</div>
+        </div>
+        <div class="testimonial">
+          <p>"Understood my specifics. Service minded."</p>
+          <div class="testimonial-author">— Vlad, Forex Group Owner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 KronZap. All rights reserved.
+  </footer>
+
+  <script>
+    const slider = document.getElementById('testimonialSlider');
+    const testimonials = slider.children.length;
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % testimonials;
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }, 4000);
+  </script>
+
+</body>
+</html>
