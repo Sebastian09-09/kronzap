@@ -1,48 +1,141 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>KronZap</title>
+    <title>Our Automation Services - KronZap</title>
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
-    <!-- Icon -->
     <link rel="stylesheet" href="assets/fonts/line-icons.css">
-    <!-- Owl carousel -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.css">
     
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
     <link rel="stylesheet" href="assets/css/nivo-lightbox.css">
-    <!-- Animate -->
     <link rel="stylesheet" href="assets/css/animate.css">
-    <!-- Main Style -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <!-- Responsive Style -->
     <link rel="stylesheet" href="assets/css/responsive.css">
 
     <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon"> 
 
+    <style>
+      body {
+        background-color: #ffffff;
+      }
+      .section-padding {
+        padding: 100px 0;
+      }
+      /* --- Intro Section (Hero) --- */
+      .hero-section {
+        padding: 180px 0 100px 0; /* Adjusted top padding for fixed header */
+        background-color: #f8f9fa; /* Light background for this section */
+      }
+      .hero-content h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+      .hero-content p.lead {
+        font-size: 1.15rem;
+        color: #555;
+        margin-bottom: 30px;
+        line-height: 1.7;
+      }
+      .hero-image {
+        
+        max-width: 100%; /* Ensure image is responsive */
+        height: auto;
+      }
+
+      /* --- Services Section --- */
+      .services-section {
+        background-color: #ffffff; /* Keep it white as requested */
+      }
+      .service-card {
+        background: #ffffff;
+        padding: 40px 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        margin-bottom: 30px; /* Increased spacing between cards */
+        height: 100%;
+      }
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+      }
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 30px auto;
+        background: #FFC107;
+        color: #222; /* Darker color for icon against yellow */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+      }
+      .service-card h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      .service-card p {
+        color: #666;
+        line-height: 1.6;
+      }
+      /* --- CTA Section --- */
+      .cta-section {
+        background-color: #ffffff; /* Changed to white as requested */
+        color: #333; /* Darker text for white background */
+        padding: 80px 0;
+        text-align: center;
+      }
+      .cta-section h4 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #222; /* Darker heading for white background */
+        margin-bottom: 20px;
+      }
+      .cta-section p {
+        color: #555;
+        margin-top: 15px;
+        margin-bottom: 40px; /* More spacing before button */
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cta-section .btn-common {
+        background: #FFC107;
+        color: #2c3e50; /* Keep dark text on yellow button */
+        border-color: #FFC107;
+        padding: 12px 35px;
+        font-weight: 600;
+        border-radius: 5px;
+      }
+      .cta-section .btn-common:hover {
+        background: #e0a800; /* Slightly darker yellow on hover */
+        border-color: #e0a800;
+        color: #2c3e50;
+      }
+    </style>
+
   </head>
   <body>
 
-    <!-- Header Area wrapper Starts -->
     <header id="header-wrap">
-      <!-- Navbar Start -->
       <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
         <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
           <div style="display: flex; flex-wrap: nowrap;align-items: center;">
           <a href="index.html" class="navbar-brand"><img width="120px" src="assets/img/logo.png" alt=""></a>       
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <i class="lni-menu"></i>
           </button>
           </div>
-          
-
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
               <li class="nav-item">
@@ -51,34 +144,22 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.html#services">
+                <a class="nav-link" href="#services">
                   Services
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.html#about">
+                <a class="nav-link" href="about.html">
                   About
                 </a>
               </li>
-              <!--
-              <li class="nav-item">
-                <a class="nav-link" href="#team">
-                  Team
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pricing">
-                  Pricing
-                </a>
-              </li>
-            -->
               <li class="nav-item">
                 <a class="nav-link" href="index.html#testimonial">
                   Testimonial
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.html#contact">
+                <a class="nav-link" href="contact.html">
                   Contact
                 </a>
               </li>
@@ -86,186 +167,93 @@
           </div>
         </div>
       </nav>
-      <!-- Navbar End -->
-
-
     </header>
-    <!-- Header Area wrapper End -->
 
-    
-
-    <!-- About Section start -->
-    <section class="hero-area section-padding bg-gray" style="padding: 180px 0px 60px 0px;">
+    <section class="hero-section section-padding">
       <div class="container">
-        <div class="row">
-          <!-- Text Column -->
-          <div class="col-lg-6 col-md-12 col-xs-12 info">
-            <div class="about-wrapper wow fadeInLeft" data-wow-delay="0.3s">
-              <div>
-                <div class="site-heading">
-                  <h2 class="section-title">What is a Bot?</h2>
-                </div>
-                <div class="content">
-                  <p>
-                    Imagine hiring an employee who works 24/7, never makes a mistake, and handles your most repetitive tasks in the blink of an eye. That’s not science fiction—that's a bot.<br>
-
-At its core, a bot is your personal software robot , built to follow your rules and take over the tedious, manual jobs that drain your time and energy. <br><br>
-
-Instead of you manually scraping websites for data, answering the same customer questions over and over, or scheduling social media posts, a bot acts as your dedicated agent. It becomes your personal data analyst, your round-the-clock support specialist, and your social media manager all rolled into one—executing thousands of tasks with perfect accuracy.<br><br>
-
-The real power of a bot isn't just about speed; it's about freedom. By automating the routine, you unlock your team's true potential to focus on what really matters: creativity, strategy, and building your business.
-                  </p>
-                  
-                </div>
-              </div>
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <div class="hero-content wow fadeInLeft" data-wow-delay="0.3s">
+              <h2 class="section-title">Turn Repetitive Tasks Into Automated Assets</h2>
+              <p class="lead">
+                A bot is your personal software robot, built to follow your rules and take over the tedious, manual jobs that drain your time and energy. By automating the routine, you unlock your team's true potential to focus on what really matters: creativity, strategy, and growing your business.
+              </p>
             </div>
           </div>
           
-          <!-- Image Column -->
-          <div class="col-lg-6 col-md-12 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
-            <img class="img-fluid" src="assets/img/about.png" alt="Kronzap Automation Process">
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <section class=" section-padding bg-gray">
-      <div class="container">
-        <div class="row">
-          <!-- Text Column -->
-          <div class="col-lg-12 col-md-12 col-xs-12 info">
-            <div class="wow fadeInRight" data-wow-delay="0.3s">
-              <div>
-                <div class="site-heading">
-                  <h2 class="section-title">Why Your Business Needs Bots </h2>
-                </div>
-                <div class="content">
-                  <p>
-                    Think of the most tedious, repetitive parts of your job—the tasks that drain your energy and feel like a roadblock to real progress. Now, imagine assigning all of it to a new team member who works at lightning speed, never makes a mistake, and operates 24/7 without a single complaint. That’s the power you unlock with a bot. <br><br>
-
-                    A bot is your digital powerhouse, designed to take over the predictable, manual work that consumes valuable time. It’s more than just software; it's a strategic tool that allows your business to function with superhuman efficiency. This frees up your most important asset—your people—to focus on what they do best: innovating, solving complex problems, and driving growth. Ultimately, bots aren't about replacing humans; they're about unleashing their full potential by getting the boring work out of the way.
-                  </p>
-                </div>
-              </div>
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <div class="wow fadeInRight" data-wow-delay="0.5s">
+              <img class="img-fluid hero-image" src="assets/img/about.png" alt="Kronzap Automation Process">
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- About Section End -->
-  
-    <!-- Testimonial Section Start -->
-    <section class="testimonial section-padding">
+    <section id="services" class="services-section section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="site-heading text-center mb-5">
+              <h2 class="section-title">What We Can Automate For You</h2>
+              <div class="sub-title">Our services are tailored to your exact needs.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card wow fadeInUp" data-wow-delay="0.4s">
+              <div class="service-icon"><i class="lni-bubble"></i></div>
+              <h3>AI Agents & Chatbots</h3>
+              <p>Deploy intelligent AI agents for 24/7 automated customer support and lead generation.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card wow fadeInUp" data-wow-delay="0.6s">
+              <div class="service-icon"><i class="lni-laptop-phone"></i></div>
+              <h3>Web & Data Scraping</h3>
+              <p>Automatically extract any data from any website to power your business intelligence.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card wow fadeInUp" data-wow-delay="0.8s">
+              <div class="service-icon"><i class="lni-cog"></i></div>
+              <h3>Process Automation</h3>
+              <p>Automate repetitive office work like data entry, report generation, and file management.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card wow fadeInUp" data-wow-delay="1.0s">
+              <div class="service-icon"><i class="lni-instagram"></i></div>
+              <h3>Social Media Bots</h3>
+              <p>Streamline your social media presence by automating posting and management tasks.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card wow fadeInUp" data-wow-delay="1.2s">
+              <div class="service-icon"><i class="lni-plug"></i></div>
+              <h3>Custom Integrations</h3>
+              <p>Connect your different software applications to work together seamlessly and share data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section section-padding">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div id="testimonials" class="owl-carousel wow fadeInUp" data-wow-delay="1.2s">
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
-                     <div class="icon" style="font-size: 100px;">
-                        <i class="lni-bubble"></i>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <h3><a href="#">AI Agents & Chatbots</a></h3>
-                  </div>
-                  <div class="content">
-                    <p class="description">Intelligent AI agents for automated 24/7 customer support.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
-                    <div class="icon" style="font-size: 100px;">
-                        <i class="lni-laptop-phone"></i>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <h3><a href="#">Web Scraping & Data Extraction Bots</a></h3>
-                  </div>
-                  <div class="content">
-                    <p class="description">Automatically extract any data from any website on the internet</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
-                    <div class="icon" style="font-size: 100px;">
-                        <i class="lni-cog"></i>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <h3><a href="#">Process Automation Bots</a></h3>
-                  </div>
-                  <div class="content">
-                    <p class="description">Automate repetitive office work like data entry, reports.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
-                    <div class="icon" style="font-size: 100px;">
-                        <i class="lni-instagram"></i>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <h3><a href="#">Social Media Bots</a></h3>
-                  </div>
-                  <div class="content">
-                    <p class="description">Automate posting and management for your social media.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
-                    <div class="icon" style="font-size: 100px;">
-                        <i class="lni-plug"></i>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <h3><a href="#">Custom integration Bots</a></h3>
-                  </div>
-                  <div class="content">
-                    <p class="description">Connect your different software apps to work together.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonial Section End -->
-     
-    <section class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">           
-            <div class="cta-text">
+          <div class="col-lg-8">
+            <div class="wow fadeInUp" data-wow-delay="0.3s">
               <h4>Ready to Put a Bot to Work for Your Business?</h4>
-              <p>Off-the-shelf solutions can't solve unique problems. We specialize in building custom bots that integrate perfectly with your workflow, tackle your specific challenges, and deliver real results.</p>
+              <p>Off-the-shelf solutions can't solve unique problems. We specialize in building custom bots that integrate perfectly with your workflow and deliver real results.</p>
+              <a href="contact.html" class="btn btn-common">Get a Free Consultation</a>
             </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-xs-12 text-right wow fadeInRight" data-wow-delay="0.3s">
-            </br><a href="mailto:contact@kronzap.com" class="btn btn-common">Contact Us</a>
           </div>
         </div>
       </div>
     </section>
 
-
-
-    <!-- Footer Section Start -->
     <footer id="footer" class="footer-area section-padding">
       <div class="container">
         <div class="container">
@@ -295,12 +283,13 @@ The real power of a bot isn't just about speed; it's about freedom. By automatin
               </ul>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <h3 class="footer-titel">Resources</h3>
+              <h3 class="footer-titel">Information</h3>
               <ul class="footer-link">
-                <li><a href="#">Case Studies</a></li>
-                <li><a href="#">Setup Guides</a></li>
-                <li><a href="#">Support & FAQ</a></li>
-                <li><a href="#">Automation Ideas</a></li>
+                <li><a href="terms.html">Terms and Condition</a></li>
+                <li><a href="refund-policy.html">Refund Policy</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
               </ul>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
@@ -332,20 +321,13 @@ The real power of a bot isn't just about speed; it's about freedom. By automatin
         </div>
       </div>   
     </footer> 
-    <!-- Footer Section End -->
-
-    <!-- Go to Top Link -->
     <a href="#" class="back-to-top">
-    	<i class="lni-arrow-up"></i>
+      <i class="lni-arrow-up"></i>
     </a>
     
-    <!-- Preloader -->
     <div id="preloader">
       <div class="loader" id="loader-1"></div>
     </div>
-    <!-- End Preloader -->
-    
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/js/jquery-min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
