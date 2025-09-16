@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Contact Us - KronZap</title>
+    <title>Data Scraping Services - KronZap</title>
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
     <link rel="stylesheet" href="assets/fonts/line-icons.css">
@@ -20,52 +20,110 @@
     <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon"> 
 
     <style>
-      .contact-box-wrapper {
-        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        border-radius: 8px;
-        overflow: hidden;
-        background: #fff;
+      body {
+        background-color: #ffffff;
       }
-      .contact-details {
-        padding: 40px;
+      .section-padding {
+        padding: 100px 0;
       }
-      .contact-details h4 {
-        font-weight: 600;
-        margin-bottom: 10px;
+      /* --- Intro Section (Hero) --- */
+      .hero-section {
+        padding: 180px 0 100px 0; /* Adjusted top padding for fixed header */
+        background-color: #f8f9fa; /* Light background for this section */
       }
-      .contact-details p {
-        color: #777;
-        margin-bottom: 30px;
+      .hero-content h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 20px;
       }
-      .info-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 25px;
-      }
-      .info-item .icon {
-        font-size: 1.8rem;
-        color: #FFC107;
-        margin-right: 20px;
-        min-width: 30px;
-      }
-      .info-item .info-text h5 {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 5px;
-      }
-      .info-item .info-text span {
+      .hero-content p.lead {
+        font-size: 1.15rem;
         color: #555;
-        line-height: 1.6;
+        margin-bottom: 30px;
+        line-height: 1.7;
       }
-      .contact-map {
+      .hero-image {
+        
+        max-width: 100%; /* Ensure image is responsive */
+        height: auto;
+      }
+
+      /* --- Services Section --- */
+      .services-section {
+        background-color: #ffffff; /* Keep it white as requested */
+      }
+      .service-card {
+        background: #ffffff;
+        padding: 40px 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        margin-bottom: 30px; /* Increased spacing between cards */
         height: 100%;
       }
-      .contact-map iframe {
-        width: 100%;
-        height: 100%; /* This will now work correctly */
-        border: none;
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+      }
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 30px auto;
+        background: #FFC107;
+        color: #222; /* Darker color for icon against yellow */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+      }
+      .service-card h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      .service-card p {
+        color: #666;
+        line-height: 1.6;
+      }
+      /* --- CTA Section --- */
+      .cta-section {
+        background-color: #ffffff; /* Changed to white as requested */
+        color: #333; /* Darker text for white background */
+        padding: 80px 0;
+        text-align: center;
+      }
+      .cta-section h4 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #222; /* Darker heading for white background */
+        margin-bottom: 20px;
+      }
+      .cta-section p {
+        color: #555;
+        margin-top: 15px;
+        margin-bottom: 40px; /* More spacing before button */
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cta-section .btn-common {
+        background: #FFC107;
+        color: #2c3e50; /* Keep dark text on yellow button */
+        border-color: #FFC107;
+        padding: 12px 35px;
+        font-weight: 600;
+        border-radius: 5px;
+      }
+      .cta-section .btn-common:hover {
+        background: #e0a800; /* Slightly darker yellow on hover */
+        border-color: #e0a800;
+        color: #2c3e50;
       }
     </style>
+
   </head>
   <body>
 
@@ -74,11 +132,10 @@
         <div class="container">
           <div style="display: flex; flex-wrap: nowrap;align-items: center;">
           <a href="index.html" class="navbar-brand"><img width="120px" src="assets/img/logo.png" alt=""></a>       
-          <button class="navbar-toggler" type="button" data-toggle-collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <i class="lni-menu"></i>
           </button>
           </div>
-          
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
               <li class="nav-item">
@@ -101,7 +158,7 @@
                   Testimonial
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="contact.html">
                   Contact
                 </a>
@@ -110,65 +167,79 @@
           </div>
         </div>
       </nav>
-      </header>
-    <section class="hero-area section-padding bg-gray" style="padding: 180px 0px 60px 0px;">
+    </header>
+
+    <section class="hero-section section-padding">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <div class="hero-content wow fadeInLeft" data-wow-delay="0.3s">
+              <h2 class="section-title">Unlock Insights with Powerful Data Scraping</h2>
+              <p class="lead">
+                A data scraper is a specialized tool designed to automatically extract large amounts of data from websites. By collecting and structuring this information, you can gain a competitive edge, monitor markets, and make data-driven decisions that fuel your business growth.
+              </p>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <div class="wow fadeInRight" data-wow-delay="0.5s">
+              <img class="img-fluid hero-image" src="assets/img/scraping.png" alt="Kronzap Automation Process">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services-section section-padding">
       <div class="container">
         <div class="row">
           <div class="col-12">
             <div class="site-heading text-center mb-5">
-              <h2 class="section-title">Contact Us</h2>
-              <div class="sub-title">We'd Love To Hear From You</div>
+              <h2 class="section-title">Our Data Scraping Capabilities</h2>
+              <div class="sub-title">We provide tailored scraping solutions to meet your unique data needs.</div>
             </div>
           </div>
         </div>
-        
         <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="contact-box-wrapper wow fadeInUp" data-wow-delay="0.3s">
-              <div class="row no-gutters">
-                <div class="col-lg-6 col-md-12">
-                  <div class="contact-details">
-                    <h4>Get In Touch</h4>
-                    <p>Have a question or a project in mind? Reach out to us. We're here to help you automate your business and drive growth.</p>
-                    
-                    <div class="info-item">
-                      <div class="icon"><i class="lni-map-marker"></i></div>
-                      <div class="info-text">
-                        <h5>Our Location</h5>
-                        <span>Dalpat Sagar Ward 18<br>Jagdalpur, Chhattisgarh 494001<br>India</span>
-                      </div>
-                    </div>
-                    
-                    <div class="info-item">
-                      <div class="icon"><i class="lni-envelope"></i></div>
-                      <div class="info-text">
-                        <h5>Email Us</h5>
-                        <span><a href="mailto:contact@kronzap.com">contact@kronzap.com</a></span>
-                      </div>
-                    </div>
-
-                    <div class="info-item">
-                      <div class="icon"><i class="lni-phone-handset"></i></div>
-                      <div class="info-text">
-                        <h5>Call Us</h5>
-                        <span><a href="tel:+919039997961">+91 9039997961</a></span>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                  <div class="contact-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1639.880393758455!2d82.01120692675917!3d19.09031125368779!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1757928086960!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                  </div>
-                </div>
-              </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card wow fadeInUp" data-wow-delay="0.4s">
+              <div class="service-icon"><i class="lni-bar-chart"></i></div>
+              <h3>Market & Competitor Research</h3>
+              <p>Scrape competitor websites, pricing, and product data to stay ahead in your industry.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card wow fadeInUp" data-wow-delay="0.6s">
+              <div class="service-icon"><i class="lni-users"></i></div>
+              <h3>Lead & Contact Extraction</h3>
+              <p>Gather emails, phone numbers, and business details from directories, listings, and social platforms.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card wow fadeInUp" data-wow-delay="0.8s">
+              <div class="service-icon"><i class="lni-alarm"></i></div>
+              <h3>Real-Time Monitoring & Alerts</h3>
+              <p>Track changes on websites, like prices, availability, or new listings and get notified instantly.</p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
+
+    <section class="cta-section section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="wow fadeInUp" data-wow-delay="0.3s">
+              <h4>Ready to Harness the Power of Web Data?</h4>
+              <p>Standard data providers don't always have what you need. We specialize in building custom data scrapers that integrate with your systems and deliver actionable results.</p>
+              <a href="contact.html" class="btn btn-common">Get a Free Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer id="footer" class="footer-area section-padding">
       <div class="container">
         <div class="container">
@@ -222,7 +293,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="copyright-content">
-                <p>Copyright © 2025 <a rel="nofollow" href="https://kronzap.com">KronZap</a> All Right Reserved</p>
+                <p>Copyright © 2025 <a rel="nofollow" href="https://uideck.com">KronZap</a> All Right Reserved</p>
               </div>
             </div>
           </div>
