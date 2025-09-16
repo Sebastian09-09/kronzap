@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Case Studies - KronZap</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="assets/fonts/line-icons.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+    
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/nivo-lightbox.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon"> 
+
+    <style>
+        /*
+    * Complete Modal Stacking & Scroll Fix
+    */
+
+    /* 1. Fix Header Overlap */
+    #header-wrap {
+    /* This value is below the modal backdrop (1040), so the header stays behind it */
+    z-index: 1039;
+    }
+
+    /* 2. Fix Background Scroll & Layout Shift */
+    body.modal-open {
+    position: fixed; /* More robust way to prevent scrolling */
+    width: 100%;
+    overflow: hidden !important;
+    padding-right: 0 !important;
+    }
+
+    body.modal-open .fixed-top {
+    padding-right: 0 !important;
+    }
+
+    .modal {
+    overflow-y: auto;
+    }
+
+      .case-study-box {
+        display: block;
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 35px 30px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+        transition: all 0.3s ease-in-out;
+        height: 100%;
+        text-decoration: none;
+        color: #333;
+        cursor: pointer;
+      }
+      .case-study-box:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        text-decoration: none;
+        color: #333;
+      }
+      .case-study-box .icon {
+        font-size: 2.5rem;
+        color: #FFC107;
+        margin-bottom: 20px;
+      }
+      .case-study-box h5 {
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #000;
+      }
+      .case-study-box p {
+        color: #777;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .case-study-box .read-more {
+        color: #007bff;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .case-study-box .read-more:hover {
+        text-decoration: underline;
+      }
+      .modal-body {
+        padding: 2rem;
+      }
+      .modal-header .close {
+          outline: none;
+      }
+      .hidden-content {
+        display: none;
+      }
+
+      /* Fix for modal causing layout shift */
+        /* Complete fix for modal layout shift (body & fixed header) */
+    body.modal-open {
+    overflow: hidden !important;
+    padding-right: 0 !important;
+    }
+
+    body.modal-open .fixed-top {
+    padding-right: 0 !important;
+    }
+
+    .modal {
+    overflow-y: auto;
+    }
+
+
+    /*
+ * PDF Document Style for Case Study
+ */
+.pdf-container {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 30px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+.pdf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #FFC107;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+.pdf-logo {
+  width: 100px;
+  height: auto;
+}
+
+.pdf-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.pdf-body {
+  color: #333;
+  line-height: 1.7;
+}
+
+.pdf-lead {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.pdf-section-title {
+  position: relative;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.pdf-section-title span {
+  background-color: #fff;
+  padding: 0 15px;
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  color: #222;
+  font-size: 1rem;
+}
+
+.pdf-section-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  z-index: 0;
+}
+
+/* Re-styled Results Grid for PDF look */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 20px 15px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.stat-metric {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.stat-description {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 5px;
+}
+
+.pdf-footer {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  font-size: 0.85rem;
+  color: #888;
+  text-align: center;
+}
+
+.pdf-container ul li::before {
+    content: "• "; /* adds a bullet */
+    color: #000; /* bullet color */
+}
+
+    </style>
+  </head>
+  <body>
+
+    <header id="header-wrap">
+      <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+        <div class="container">
+          <div style="display: flex; flex-wrap: nowrap;align-items: center;">
+          <a href="index.html" class="navbar-brand"><img width="120px" src="assets/img/logo.png" alt=""></a>       
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lni-menu"></i>
+          </button>
+          </div>
+          
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
+              <li class="nav-item"> <a class="nav-link" href="index.html#hero-area"> Home </a> </li>
+              <li class="nav-item"> <a class="nav-link" href="index.html#services"> Services </a> </li>
+              <li class="nav-item"> <a class="nav-link" href="index.html#about"> About </a> </li>
+              <li class="nav-item"> <a class="nav-link" href="index.html#testimonial"> Testimonial </a> </li>
+              <li class="nav-item"> <a class="nav-link" href="contact.html"> Contact </a> </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      </header>
+    <section class="hero-area section-padding bg-gray" style="padding: 180px 0px 100px 0px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="site-heading text-center mb-5">
+              <h2 class="section-title">Case Studies</h2>
+              <div class="sub-title">See How We've Helped Businesses Succeed</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="case-study-box wow fadeInUp" data-wow-delay="0.2s" data-toggle="modal" data-target="#caseStudyModal" data-content-id="#cs-chrome-ext-record-playback" data-title="Chrome Extension Record & Playback">
+              <div class="icon"><i class="lni-plug"></i></div>
+              <h5>Chrome Extension Record & Playback</h5>
+              <p>Automated recording and replay of user workflows, reducing manual testing and training time by 70% and improving team efficiency.</p>
+              <span class="read-more">Read Full Story &rarr;</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="case-study-box wow fadeInUp" data-wow-delay="0.4s" data-toggle="modal" data-target="#caseStudyModal" data-content-id="#cs-google-maps-leadgen" data-title="Google Maps Lead Generation">
+                <div class="icon"><i class="lni-map-marker"></i></div>
+                <h5>Google Maps Lead Generation</h5>
+                <p>Automated scraping of business data from Google Maps with auto-scroll and filtering, helping the client generate high-quality leads at scale.</p>
+                <span class="read-more">Read Full Story &rarr;</span>
+            </div>
+          </div>
+
+
+
+        </div>
+        
+      </div>
+    </section>
+
+    <div class="modal fade" id="caseStudyModal" tabindex="-1" role="dialog" aria-labelledby="caseStudyModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="caseStudyModalLabel">Case Study Details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden-content">
+
+
+        <!--CHROME EXT RECORD AND PLAYBACK-->
+        <div id="cs-chrome-ext-record-playback">
+            <div class="pdf-container">
+                <div class="pdf-header">
+                    <img src="assets/img/logo.png" alt="KronZap Logo" class="pdf-logo">
+                    <span class="pdf-title">Case Study Report</span>
+                </div>
+
+                <div class="pdf-body">
+                    <p class="pdf-lead">
+                        <strong>Case Study:</strong> Chrome Extension for Recording & Playback of User Activity
+                    </p>
+                    <p>
+                        This Project was started on 03/01/2025 and finished on 13/02/2025 by KronZap<br><br>
+                        <strong>Industry : </strong>Property Development<br>
+                        <strong>Date : </strong> 13/02/2025
+                    </p>
+
+                    <div class="pdf-section-title">
+                        <span>Background</span>
+                    </div>
+                    <p>
+                        The client needed a way to record user activity on their platform and replay it later. Manually tracking actions and repeating tasks for testing or training was slow, error-prone, and inefficient.
+                    </p>
+
+                    <div class="pdf-section-title">
+                        <span>Objective</span>
+                    </div>
+                    <p>
+                        The client wanted a tool that could:
+                        <ul>
+                            <li>Record user actions like clicks, typing, and navigation.</li>
+                            <li>Save sessions for multiple users.</li>
+                            <li>Replay workflows with different inputs.</li>
+                            <li>Provide a dashboard to monitor and manage recorded sessions.</li>
+                        </ul>
+                    </p>
+
+                    <div class="pdf-section-title">
+                        <span>Approach</span>
+                    </div>
+                    <p>
+                        Steps KronZap took:
+                        <ul>
+                            <li>Developed a Chrome Extension to capture user activity in real-time.</li>
+                            <li>Built a dashboard to store, organize, and manage recorded sessions.</li>
+                            <li>Added playback functionality allowing sessions to be repeated with new input values.</li>
+                            <li>Supported multiple users, making it easy for teams to use the tool.</li>
+                            <li>Added basic analytics on the dashboard to track usage and workflow efficiency.</li>
+                        </ul>
+                    </p>
+
+                    <div class="pdf-section-title">
+                        <span>Solution</span>
+                    </div>
+                    <p>
+                        KronZap delivered a Chrome Extension integrated with a dashboard that:
+                        <ul>
+                            <li>Captures and records all user interactions.</li>
+                            <li>Saves sessions in a secure backend.</li>
+                            <li>Allows workflows to be replayed with modifications, saving time on repetitive tasks.</li>
+                            <li>Supports multiple users, enabling collaboration.</li>
+                            <li>Provides a dashboard to track and monitor workflows, making processes more efficient and reliable.</li>
+                        </ul>
+                    </p>
+
+                    <div class="pdf-section-title">
+                        <span>Results</span>
+                    </div>
+                    <ul>
+                        <li>Reduced manual testing and training time by ~70%.</li>
+                        <li>Minimized errors from repeated manual tasks.</li>
+                        <li>Enabled multi-user workflow management, improving team collaboration.</li>
+                        <li>Dashboard helped the client track activity and optimize workflows.</li>
+                    </ul>
+
+                    <div class="pdf-section-title">
+                        <span>Client Testimonial</span>
+                    </div>
+                    <p>
+                        <i>"The Chrome Extension delivered by KronZap saved us a lot of time and made our processes much more efficient. The dashboard is easy to use and helps us track workflows easily. We’re very happy with the outcome!"</i>
+                    </p>
+                </div>
+
+                <div class="pdf-footer">
+                    kronzap.com<br>
+                    contact@kronzap.com
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!--GOOGLE LEADS-->
+        <div id="cs-google-maps-leadgen">
+            <div class="pdf-container">
+                <div class="pdf-header">
+                    <img src="assets/img/logo.png" alt="KronZap Logo" class="pdf-logo">
+                    <span class="pdf-title">Case Study Report</span>
+                </div>
+
+                <div class="pdf-body">
+                    <p class="pdf-lead">
+                        <strong>Case Study:</strong> Google Maps Lead Generation Automation
+                    </p>
+                    <p>
+                        This Project was started on 05/02/2025 and finished on 20/03/2025 by KronZap<br><br>
+                        <strong>Industry : </strong>Marketing & Sales<br>
+                        <strong>Date : </strong> 20/03/2025
+                    </p>
+
+                    <div class="pdf-section-title">
+                        <span>Background</span>
+                    </div>
+                    <p>
+                        The client needed a reliable way to collect business leads from Google Maps. Manually searching, scrolling, and copying details for thousands of businesses was slow, inconsistent, and wasted valuable time for their sales team.
+                    </p>
+
+                    <div class="pdf-section-title">
+                        <span>Objective</span>
+                    </div>
+                    <p>
+                        The client wanted an automated solution that could:
+                        <ul>
+                            <li>Scrape business details (name, phone, website, address, category).</li>
+                            <li>Auto-scroll and extract data for large areas without missing results.</li>
+                            <li>Filter businesses by location, keyword, or category.</li>
+                            <li>Export leads into a structured dashboard for easy access and analysis.</li>
+                        </ul>
+                    </p>
+
+                    <div class="pdf-section-title">
+                        <span>Approach</span>
+                    </div>
+                    <p>
+                        Steps KronZap took:
+                        <ul>
+                            <li>Built a scraping tool integrated with Google Maps’ interface.</li>
+                            <li>Added automated scrolling to capture all business results in a given city/area.</li>
+                            <li>Extracted and cleaned business data including name, phone, email, and website.</li>
+                            <li>Created a dashboard to organize, search, and filter collected leads.</li>
+                            <li>Implemented export features for CSV/Excel so the sales team could use the data easily.</li>
+                        </ul>
+                    </p>
+
+                    <div class="pdf-section-title">
+                        <span>Solution</span>
+                    </div>
+                    <p>
+                        KronZap delivered a Google Maps Lead Generation system that:
+                        <ul>
+                            <li>Automatically scrapes and stores business data from Google Maps.</li>
+                            <li>Handles large areas with infinite auto-scrolling and no data loss.</li>
+                            <li>Supports filters for category, location, and keyword targeting.</li>
+                            <li>Provides a clean dashboard for managing and exporting leads.</li>
+                            <li>Helps sales teams quickly identify and reach out to qualified prospects.</li>
+                        </ul>
+                    </p>
+
+                    <div class="pdf-section-title">
+                        <span>Results</span>
+                    </div>
+                    <ul>
+                        <li>Generated thousands of verified leads within weeks.</li>
+                        <li>Cut manual research time by over 80%.</li>
+                        <li>Improved sales pipeline efficiency with structured, ready-to-use data.</li>
+                        <li>Enabled targeted outreach campaigns with accurate business information.</li>
+                    </ul>
+
+                    <div class="pdf-section-title">
+                        <span>Client Testimonial</span>
+                    </div>
+                    <p>
+                        <i>"KronZap’s lead generation tool gave us access to thousands of high-quality leads that we simply couldn’t have gathered manually. It has saved our sales team countless hours and boosted our outreach efficiency. Highly recommend!"</i>
+                    </p>
+                </div>
+
+                <div class="pdf-footer">
+                    kronzap.com<br>
+                    contact@kronzap.com
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+    <footer id="footer" class="footer-area section-padding">
+      <div class="container">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div class="widget">
+                <h3 class="footer-logo"><img width="80px" src="assets/img/logo.png" alt=""></h3>
+                <div class="textwidget">
+                  <p>Kronzap helps businesses save hours and grow faster with powerful automation, data scraping, and AI-driven workflows.</p>
+                </div>
+                <div class="social-icon">
+                  <a class="facebook" href="#"><i class="lni-facebook-filled"></i></a>
+                  <a class="twitter" href="#"><i class="lni-twitter-filled"></i></a>
+                  <a class="instagram" href="https://www.instagram.com/kronzap"><i class="lni-instagram-filled"></i></a>
+                  <a class="linkedin" href="https://www.linkedin.com/company/kronzap/"><i class="lni-linkedin-filled"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <h3 class="footer-titel">Products</h3>
+              <ul class="footer-link">
+                <li><a href="bots.html">Bots</a></li>           
+                <li><a href="scraping.html">Data Scrapers</a></li>
+                <li><a href="rpa.html">Robotic Process Automation</a></li>
+                <li><a href="extension.html">Browser Extensions</a></li>
+                <li><a href="automation.html">Browser Automation</a></li>           
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <h3 class="footer-titel">Resources</h3>
+              <ul class="footer-link">
+                <li><a href="casestudies.html">Case Studies</a></li>
+                <li><a href="faq.html">Support & FAQ</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <h3 class="footer-titel">Information</h3>
+              <ul class="footer-link">
+                <li><a href="terms.html">Terms and Condition</a></li>
+                <li><a href="refund-policy.html">Refund Policy</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>  
+      </div> 
+      <div id="copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="copyright-content">
+                <p>Copyright © 2025 <a rel="nofollow" href="https://kronzap.com">KronZap</a> All Right Reserved</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+    </footer> 
+    <a href="#" class="back-to-top">
+      <i class="lni-arrow-up"></i>
+    </a>
+    
+    <div id="preloader">
+      <div class="loader" id="loader-1"></div>
+    </div>
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>      
+    <script src="assets/js/waypoints.min.js"></script>   
+    <script src="assets/js/subpage.js"></script>
+      
+    <script>
+      $(document).ready(function() {
+        // This is your existing code to handle clicks on the case study boxes
+        $('#caseStudyModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget); // Box that was clicked
+          var contentId = button.data('content-id'); // Get the ID of the content div
+          var caseStudyTitle = button.data('title'); // Get the title
+          
+          var modal = $(this);
+          var modalBody = modal.find('.modal-body');
+          
+          // Find the hidden content div and get its HTML
+          var contentHtml = $(contentId).html();
+          
+          // Update the modal's title and inject the content
+          modal.find('.modal-title').text(caseStudyTitle);
+          modalBody.html(contentHtml);
+        });
+
+
+        // --- NEW CODE TO OPEN MODAL FROM URL ---
+
+        // 1. Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const caseStudyId = urlParams.get('id');
+
+        // 2. Check if an 'id' parameter exists
+        if (caseStudyId) {
+          // 3. Construct the selector to find the correct box
+          // e.g., if id is 'chrome-ext-record-playback', selector becomes '#cs-chrome-ext-record-playback'
+          const contentSelector = '#cs-' + caseStudyId;
+          
+          // 4. Find the case study box on the page using its data-content-id
+          const targetBox = $('[data-content-id="' + contentSelector + '"]');
+          
+          // 5. If a matching box is found, trigger a click on it
+          if (targetBox.length > 0) {
+            // We use a small delay to ensure the page has finished loading and animations are ready
+            setTimeout(function() {
+              targetBox.click();
+            }, 500); // 500 milliseconds delay
+          }
+        }
+      });
+    </script>
+      
+  </body>
+</html>
