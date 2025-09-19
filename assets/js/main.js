@@ -131,3 +131,16 @@ $(document).ready(function() {
     }
   }
 });
+
+// Find this code in your JS file and make sure the selector is '.page-scroll'
+$('.page-scroll').on('click', function(event) {
+    if (this.hash !== '') {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 100, 'linear' ,function(){ // 800 is the scroll speed in milliseconds
+            window.location.hash = hash;
+        });
+    } 
+});
