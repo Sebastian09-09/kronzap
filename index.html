@@ -129,25 +129,137 @@
         line-height: 1.6;
       }
 
-      /* --- Testimonial Section --- */
+     /* --- Testimonial Section (Updated for Horizontal Scroll) --- */
       .testimonial {
         background-color: #f8f9fa;
       }
-      .owl-carousel .item {
+
+      /* This is the main container for your new testimonial cards */
+      .testimonial-grid {
         display: flex;
+        /* NEW: Prevents items from wrapping to the next line */
+        flex-wrap: nowrap;
+        /* NEW: Enables horizontal scrolling when content overflows */
+        overflow-x: auto;
+        gap: 30px;
+        margin-top: 30px;
+        /* NEW: Adds some padding at the bottom for the scrollbar */
+        padding-bottom: 20px;
       }
-      .testimonial-item {
+
+      /* This is the style for a single testimonial card */
+      .testimonial-card {
         background: #fff;
-        padding: 30px;
         border-radius: 8px;
-        box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+        text-align: center;
+        /* NEW: Prevents cards from shrinking. Sets a fixed base width. */
+        flex: 0 0 350px;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* (The rest of your testimonial CSS remains the same) */
+      .testimonial-image {
         width: 100%;
-        height: 100%;
+        height: auto;
+        display: block;
       }
-      #testimonials .owl-theme .owl-dots .owl-dot.active span, 
-      #testimonials .owl-theme .owl-dots .owl-dot:hover span {
-          background: #FFC107;
+
+      .testimonial-info {
+        padding: 20px;
       }
+
+      .client-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 8px;
+      }
+
+      .project-description {
+        font-size: 0.9rem;
+        color: #555;
+        margin: 0;
+      }
+
+      .project-description strong {
+        color: #333;
+      }
+
+      /* Optional: Add this for a better scrolling experience */
+
+      .testimonial-grid {
+        /* ... (keep all the properties from above) ... */
+        scroll-snap-type: x mandatory; /* Snaps scrolling to elements */
+      }
+
+      .testimonial-card {
+        /* ... (keep all the properties from above) ... */
+        scroll-snap-align: start; /* Defines the snap point */
+      }
+
+      /* Optional: Custom scrollbar styling for a cleaner look */
+      .testimonial-grid::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .testimonial-grid::-webkit-scrollbar-track {
+        background: #e0e0e0;
+        border-radius: 10px;
+      }
+
+      .testimonial-grid::-webkit-scrollbar-thumb {
+        background-color: #FFC107; /* Matches your theme color */
+        border-radius: 10px;
+      }
+
+
+      /* --- Styling for the CTA Testimonial Card --- */
+
+      /* This targets the special CTA card to center its content */
+      .testimonial-card-cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(135deg, #fff, #fff8e1); /* A subtle gradient to make it stand out */
+      }
+
+      .cta-content h3 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .cta-content p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 25px;
+        line-height: 1.5;
+      }
+
+      /* This styles the button */
+      .cta-button {
+        display: inline-block;
+        background-color: #FFC107; /* Your theme's primary color */
+        color: #1a1a1a;
+        padding: 12px 30px;
+        border-radius: 50px; /* Gives it a modern "pill" shape */
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        border: none;
+        cursor: pointer;
+      }
+
+      .cta-button:hover {
+        background-color: #ffca2c;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      } 
+
     </style>
   </head>
   <body>
@@ -340,48 +452,67 @@
     </section>
 
     <section id="testimonial" class="testimonial section-padding">
-      <div class="container">
-        <div class="row justify-content-center">
+        <div class="container">
+          <div class="row justify-content-center">
             <div class="col-lg-12">
-              <div class="section-header text-center">          
+              <div class="section-header text-center">
                 <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">What Our Clients Say</h2>
                 <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
               </div>
             </div>
-            <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
-            <div id="testimonials" class="owl-carousel wow fadeInUp" data-wow-delay="0.5s">
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb"><img src="assets/img/testimonial/img2.jpg" width="74px" alt="" style="aspect-ratio:1/1; object-fit:cover; border-radius:50%;"></div>
-                  <div class="info"><h2><a href="#">Alex</a></h2><h3><a href="#">Data Analyst</a></h3></div>
-                  <div class="content"><p class="description">Custom scraping was top-notch. Fast delivery and clean data.</p></div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb"><img src="assets/img/testimonial/img5.jpg" width="74px" alt="" style="aspect-ratio:1/1; object-fit:cover; border-radius:50%;"></div>
-                  <div class="info"><h2><a href="#">Akhilesh</a></h2><h3><a href="#">Marketing</a></h3></div>
-                  <div class="content"><p class="description">Their browser extension is now an essential part of our daily workflow. It saves us so much time.</p></div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb"><img src="assets/img/testimonial/img3.jpg" width="74px" alt="" style="aspect-ratio:1/1; object-fit:cover; border-radius:50%;"></div>
-                  <div class="info"><h2><a href="#">Boris</a></h2><h3><a href="#">Founder</a></h3></div>
-                  <div class="content"><p class="description">Fast communication and reliable code. A truly great experience.</p></div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb"><img src="assets/img/testimonial/img4.jpg" width="74px" alt="" style="aspect-ratio:1/1; object-fit:cover; border-radius:50%;"></div>
-                  <div class="info"><h2><a href="#">Maksim</a></h2><h3><a href="#">Forex Group</a></h3></div>
-                  <div class="content"><p class="description">They understood my specific requirements completely. Very service-minded and professional.</p></div>
-                </div>
+          </div>
+
+          <div class="testimonial-grid wow fadeInUp" data-wow-delay="0.5s">
+            
+            <div class="testimonial-card">
+              <img src="assets/img/testimonial/upwork-review-1.png" alt="Upwork testimonial from Tareef" class="testimonial-image">
+              <div class="testimonial-info">
+                <h3 class="client-name">Tareef</h3>
+                <p class="project-description">
+                  Automation to Subscribe multiple emails to newsletter with custom dashboard
+                </p>
               </div>
             </div>
-          </div>
+
+            <div class="testimonial-card">
+              <img src="assets/img/testimonial/upwork-review-2.png" alt="Upwork testimonial from Maksim" class="testimonial-image">
+              <div class="testimonial-info">
+                <h3 class="client-name">Maksim</h3>
+                <p class="project-description">
+                  Discord Bot Automation Integrated with Stock Market Data and AI
+                </p>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <img src="assets/img/testimonial/upwork-review-3.png" alt="Upwork testimonial from Ahmed" class="testimonial-image">
+              <div class="testimonial-info">
+                <h3 class="client-name">Ahmed</h3>
+                <p class="project-description">
+                  Instagram bot to find followers with a custom dashboard
+                </p>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <img src="assets/img/testimonial/upwork-review-4.png" alt="Upwork testimonial from Ethan" class="testimonial-image">
+              <div class="testimonial-info">
+                <h3 class="client-name">Ethan</h3>
+                <p class="project-description">
+                  Bot to rank websites based on seo according to google search results and send updates to phone
+                </p>
+              </div>
+            </div>
+            
+            <div class="testimonial-card testimonial-card-cta">
+                <div class="cta-content">
+                  <h3>And Many More...</h3>
+                  <p>Ready to automate your business and save hours every week?</p>
+                  <a href="contact.html" class="btn btn-common mt-3">Get Your Solution Today</a>
+                </div>
+            </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <section id="contact" class="section-padding bg-gray">    
@@ -418,10 +549,9 @@
                   <p>Kronzap helps businesses save hours and grow faster with powerful automation and AI-driven workflows.</p>
                 </div>
                 <div class="social-icon">
-                  <a class="facebook" href="#"><i class="lni-facebook-filled"></i></a>
-                  <a class="twitter" href="#"><i class="lni-twitter-filled"></i></a>
-                  <a class="instagram" href="https://www.instagram.com/kronzap"><i class="lni-instagram-filled"></i></a>
-                  <a class="linkedin" href="https://www.linkedin.com/company/kronzap/"><i class="lni-linkedin-filled"></i></a>
+                  <a target="_blank"  class="facebook" href="https://www.facebook.com/kronzap"><i class="lni-facebook-filled"></i></a>
+                  <a target="_blank"  class="instagram" href="https://www.instagram.com/kronzap"><i class="lni-instagram-filled"></i></a>
+                  <a target="_blank" class="linkedin" href="https://www.linkedin.com/company/kronzap/"><i class="lni-linkedin-filled"></i></a>
                 </div>
               </div>
             </div>
