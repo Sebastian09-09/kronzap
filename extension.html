@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Custom Browser Extension Development - KronZap</title>
+    <title>Custom Chrome & Firefox Extension Development | KronZap</title>
+
+    <meta name="description" content="KronZap develops custom browser extensions for Chrome & Firefox to automate tasks, integrate with CRMs, and boost productivity. Build your custom tool with us.">
+
+    <meta name="keywords" content="custom browser extension, chrome extension development, firefox extension developer, browser extension company, productivity tools, Visakhapatnam">
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
     <link rel="stylesheet" href="assets/fonts/line-icons.css">
@@ -26,12 +30,11 @@
       .section-padding {
         padding: 100px 0;
       }
-      /* --- Intro Section (Hero) --- */
       .hero-section {
-        padding: 180px 0 100px 0; /* Adjusted top padding for fixed header */
-        background-color: #f8f9fa; /* Light background for this section */
+        padding: 180px 0 100px 0;
+        background-color: #f8f9fa;
       }
-      .hero-content h2 {
+      .hero-content h1, .hero-content h2 { /* Targeting H1 now */
         font-size: 2.8rem;
         font-weight: 700;
         line-height: 1.3;
@@ -44,14 +47,11 @@
         line-height: 1.7;
       }
       .hero-image {
-        
-        max-width: 100%; /* Ensure image is responsive */
+        max-width: 100%;
         height: auto;
       }
-
-      /* --- Services Section --- */
-      .services-section {
-        background-color: #ffffff; /* Keep it white as requested */
+      .services-section, .why-us-section {
+        background-color: #ffffff;
       }
       .service-card {
         background: #ffffff;
@@ -60,7 +60,7 @@
         box-shadow: 0 5px 25px rgba(0,0,0,0.07);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         text-align: center;
-        margin-bottom: 30px; /* Increased spacing between cards */
+        margin-bottom: 30px;
         height: 100%;
       }
       .service-card:hover {
@@ -72,7 +72,7 @@
         height: 80px;
         margin: 0 auto 30px auto;
         background: #FFC107;
-        color: #222; /* Darker color for icon against yellow */
+        color: #222;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -88,37 +88,54 @@
         color: #666;
         line-height: 1.6;
       }
+      /* --- Why Us Section --- */
+      .why-us-section .feature-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 30px;
+      }
+      .why-us-section .icon {
+        font-size: 2rem;
+        color: #FFC107;
+        margin-right: 20px;
+        min-width: 40px;
+      }
+      .why-us-section h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
       /* --- CTA Section --- */
       .cta-section {
-        background-color: #ffffff; /* Changed to white as requested */
-        color: #333; /* Darker text for white background */
+        background-color: #f8f9fa; /* Changed to light gray for contrast */
+        color: #333;
         padding: 80px 0;
         text-align: center;
       }
       .cta-section h4 {
         font-size: 2rem;
         font-weight: 700;
-        color: #222; /* Darker heading for white background */
+        color: #222;
         margin-bottom: 20px;
       }
       .cta-section p {
         color: #555;
         margin-top: 15px;
-        margin-bottom: 40px; /* More spacing before button */
+        margin-bottom: 40px;
         max-width: 700px;
         margin-left: auto;
         margin-right: auto;
       }
       .cta-section .btn-common {
         background: #FFC107;
-        color: #2c3e50; /* Keep dark text on yellow button */
+        color: #2c3e50;
         border-color: #FFC107;
         padding: 12px 35px;
         font-weight: 600;
         border-radius: 5px;
       }
       .cta-section .btn-common:hover {
-        background: #e0a800; /* Slightly darker yellow on hover */
+        background: #e0a800;
         border-color: #e0a800;
         color: #2c3e50;
       }
@@ -131,7 +148,7 @@
       <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
         <div class="container">
           <div style="display: flex; flex-wrap: nowrap;align-items: center;">
-          <a href="index.html" class="navbar-brand"><img width="120px" src="assets/img/logo.png" alt=""></a>       
+          <a href="index.html" class="navbar-brand"><img width="120px" src="assets/img/logo.png" alt="KronZap Logo"></a>       
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <i class="lni-menu"></i>
           </button>
@@ -139,29 +156,19 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
               <li class="nav-item">
-                <a class="nav-link" href="index.html#hero-area">
-                  Home
-                </a>
+                <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#services">
-                  Services
-                </a>
+                <a class="nav-link" href="index.html#services">Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.html#about">
-                  About
-                </a>
+                <a class="nav-link" href="index.html#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.html#testimonial">
-                  Testimonial
-                </a>
+                <a class="nav-link" href="index.html#testimonial">Testimonials</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">
-                  Contact
-                </a>
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
           </div>
@@ -174,16 +181,16 @@
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-12 col-xs-12">
             <div class="hero-content wow fadeInLeft" data-wow-delay="0.3s">
-              <h2 class="section-title">Enhance Your Workflow with Custom Browser Extensions</h2>
+              <h1 class="section-title">Custom Browser Extension Development</h1>
               <p class="lead">
-                A browser extension is a small software program that customizes the browsing experience. We build powerful extensions that add new features, integrate with other services, and automate tasks directly within your browser to boost productivity and efficiency.
+                We build powerful custom browser extensions for Chrome and Firefox that add new features, integrate with your existing services, and automate tasks directly within your browser to boost team productivity and efficiency.
               </p>
             </div>
           </div>
           
           <div class="col-lg-6 col-md-12 col-xs-12">
             <div class="wow fadeInRight" data-wow-delay="0.5s">
-              <img class="img-fluid hero-image" src="assets/img/extension.png" alt="Kronzap Browser Extension Development">
+              <img class="img-fluid hero-image" src="assets/img/extension.png" alt="Custom browser extension development for workflow automation by KronZap">
             </div>
           </div>
         </div>
@@ -195,7 +202,7 @@
         <div class="row">
           <div class="col-12">
             <div class="site-heading text-center mb-5">
-              <h2 class="section-title">Our Browser Extension Capabilities</h2>
+              <h2 class="section-title">Our Browser Extension Development Services</h2>
               <div class="sub-title">We develop custom extensions for Chrome, Firefox, and other major browsers.</div>
             </div>
           </div>
@@ -204,22 +211,22 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="service-card wow fadeInUp" data-wow-delay="0.4s">
               <div class="service-icon"><i class="lni-bolt"></i></div>
-              <h3>Automation & Productivity</h3>
-              <p>BAutomate repetitive browser tasks to save time and boost efficiency.</p>
+              <h3>Productivity & Automation Tools</h3>
+              <p>Automate repetitive browser tasks like form filling, data entry, and navigation to save time and boost efficiency for your team.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="service-card wow fadeInUp" data-wow-delay="0.6s">
-              <div class="service-icon"><i class="lni-download"></i></div>
-              <h3>Data Extraction Tools</h3>
-              <p>Create one-click tools to extract specific data from web pages and export it to CSV or other formats.</p>
+              <div class="service-icon"><i class="lni-plug"></i></div>
+              <h3>CRM & API Integration</h3>
+              <p>Connect your browser directly to your CRM or other software. Update records, manage leads, and access data without switching tabs.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="service-card wow fadeInUp" data-wow-delay="0.8s">
-              <div class="service-icon"><i class="lni-package"></i></div>
-              <h3>Custom Extensions</h3>
-              <p>Build tailored browser tools to fit team needs and improve workflows.</p>
+              <div class="service-icon"><i class="lni-download"></i></div>
+              <h3>Data Extraction & Scraping</h3>
+              <p>Create one-click tools to extract specific data from web pages, social media, or e-commerce sites and export it to any format.</p>
             </div>
           </div>
         </div>
@@ -231,8 +238,8 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="wow fadeInUp" data-wow-delay="0.3s">
-              <h4>Have an Idea for a Browser Extension?</h4>
-              <p>If you have a unique challenge or a repetitive task that could be simplified, a custom browser extension might be the perfect solution. Let's talk about how we can build a tool tailored to your needs.</p>
+              <h4>Have an Idea for a Custom Browser Extension?</h4>
+              <p>If you have a unique challenge or a repetitive task that could be simplified, a custom Chrome extension is the perfect solution. Let's talk about how we can build a tool tailored specifically for your workflow.</p>
               <a href="contact.html" class="btn btn-common">Get a Free Consultation</a>
             </div>
           </div>
@@ -246,7 +253,7 @@
           <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
               <div class="widget">
-                <h3 class="footer-logo"><img width="80px" src="assets/img/logo.png" alt=""></h3>
+                <h3 class="footer-logo"><img width="80px" src="assets/img/logo.png" alt="KronZap Automation Logo"></h3>
                 <div class="textwidget">
                   <p>Kronzap helps businesses save hours and grow faster with powerful automation, data scraping, and AI-driven workflows.</p>
                 </div>
@@ -292,7 +299,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="copyright-content">
-                <p>Copyright © 2025 <a rel="nofollow" href="https://uideck.com">KronZap</a> All Right Reserved</p>
+                <p>Copyright © 2025 <a href="https://kronzap.com">KronZap</a> All Right Reserved</p>
               </div>
             </div>
           </div>
