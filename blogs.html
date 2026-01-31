@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Blogs | KronZap Automation</title>
+
+    <meta name="description" content="Read the latest insights on automation, custom bot development, web scraping strategies, and workflow optimization from the KronZap team.">
+    <meta name="keywords" content="automation blog, bot development news, tech insights, KronZap blog, web scraping tips">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="assets/fonts/line-icons.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+    
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/nivo-lightbox.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon"> 
+
+    <style>
+      body {
+        background-color: #ffffff;
+      }
+      .section-padding {
+        padding: 100px 0;
+      }
+      /* --- Hero Styles --- */
+      .hero-section {
+        padding: 180px 0 100px 0;
+        background-color: #f8f9fa;
+      }
+      .hero-content h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+      .hero-content p.lead {
+        font-size: 1.15rem;
+        color: #555;
+        margin-bottom: 30px;
+        line-height: 1.7;
+      }
+      
+      /* --- Blog Grid Styles --- */
+      .blog-item-wrapper {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+        transition: all 0.3s ease-in-out;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .blog-item-wrapper:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+      }
+      .blog-item-img {
+        position: relative;
+        overflow: hidden;
+        height: 220px; 
+        background-color: #eee;
+      }
+      .blog-item-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+      .blog-item-wrapper:hover .blog-item-img img {
+        transform: scale(1.05);
+      }
+      .blog-item-text {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+      .meta-tags {
+        font-size: 0.85rem;
+        color: #888;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .meta-tags span {
+        margin-right: 15px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .meta-tags i {
+        color: #FFC107;
+        margin-right: 5px;
+        font-size: 1rem;
+      }
+      .blog-item-text h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        line-height: 1.4;
+      }
+      .blog-item-text h3 a {
+        color: #222;
+        transition: color 0.3s;
+        text-decoration: none;
+      }
+      .blog-item-text h3:hover a {
+        color: #FFC107;
+      }
+      .blog-item-text p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .read-more {
+        margin-top: auto;
+        font-weight: 600;
+        color: #222;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        display: inline-block;
+        text-decoration: none;
+      }
+      .read-more:hover {
+        color: #FFC107;
+        text-decoration: none;
+      }
+
+      /* --- CTA Section FIXED --- */
+      .cta-section {
+        background-color: #f8f9fa;
+        color: #333;
+        padding: 80px 0;
+        text-align: center;
+      }
+      .cta-section h4 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 15px; /* Tighter gap */
+      }
+      .cta-section p {
+        color: #555;
+        margin-top: 0;       /* No top margin */
+        margin-bottom: 30px; /* Closer to button */
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cta-section .btn-common {
+        background: #FFC107;
+        color: #2c3e50;
+        border-color: #FFC107;
+        padding: 12px 35px;
+        font-weight: 600;
+        border-radius: 5px;
+      }
+      .cta-section .btn-common:hover {
+        background: #e0a800;
+        border-color: #e0a800;
+        color: #2c3e50;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <header id="header-wrap">
+      <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+        <div class="container">
+          <div style="display: flex; flex-wrap: nowrap;align-items: center;">
+          <a href="index.html" class="navbar-brand"><img width="120px" src="assets/img/logo.png" alt="KronZap Logo"></a>       
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lni-menu"></i>
+          </button>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#testimonial">Testimonials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-12 text-center">
+            <div class="hero-content wow fadeInUp" data-wow-delay="0.3s">
+              <h1 class="section-title">Blogs</h1>
+              <p class="lead">
+                Explore the latest trends in automation, tutorials on bot development, and strategies to scale your business efficiently.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="section-padding">
+      <div class="container">
+        <div id="blog-posts-container" class="row">
+            </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="wow fadeInUp" data-wow-delay="0.3s">
+              <h4>Have a Topic You Want Us to Cover?</h4>
+              <p>We are constantly researching new automation techniques. If you have a question or a specific challenge, let us know.</p>
+              <a href="contact.html" class="btn btn-common">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="footer-area section-padding">
+      <div class="container">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div class="widget">
+                <h3 class="footer-logo"><img width="80px" src="assets/img/logo.png" alt="KronZap Automation Logo"></h3>
+                <div class="textwidget">
+                  <p>Kronzap helps businesses save hours and grow faster with powerful automation, data scraping, and AI-driven workflows.</p>
+                </div>
+                <div class="social-icon">
+                  <a target="_blank" class="facebook" href="https://www.facebook.com/kronzap"><i class="lni-facebook-filled"></i></a>
+                  <a target="_blank" class="instagram" href="https://www.instagram.com/kronzap"><i class="lni-instagram-filled"></i></a>
+                  <a target="_blank" class="linkedin" href="https://www.linkedin.com/company/kronzap/"><i class="lni-linkedin-filled"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <h3 class="footer-titel">Products</h3>
+              <ul class="footer-link">
+                <li><a href="bots.html">Bots</a></li>           
+                <li><a href="scraping.html">Data Scrapers</a></li>
+                <li><a href="rpa.html">Robotic Process Automation</a></li>
+                <li><a href="extension.html">Browser Extensions</a></li>
+                <li><a href="automation.html">Browser Automation</a></li>           
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <h3 class="footer-titel">Resources</h3>
+              <ul class="footer-link">
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="faq.html">Support & FAQ</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <h3 class="footer-titel">Information</h3>
+              <ul class="footer-link">
+                <li><a href="terms.html">Terms and Condition</a></li>
+                <li><a href="refund-policy.html">Refund Policy</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>  
+      </div> 
+      <div id="copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="copyright-content">
+                <p>Copyright © 2025 <a href="https://kronzap.com">KronZap</a> All Right Reserved</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+    </footer> 
+    <a href="#" class="back-to-top">
+      <i class="lni-arrow-up"></i>
+    </a>
+    
+    <div id="preloader">
+      <div class="loader" id="loader-1"></div>
+    </div>
+    
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>      
+    <script src="assets/js/waypoints.min.js"></script>   
+    <script src="assets/js/subpage.js"></script>
+
+    <script>
+      // ==========================================
+      // BLOG POSTS HERE
+      // ==========================================
+      const blogData = [
+        {
+          "img": "blogs/html/upwork-sniper/main.png", 
+          "date": "Jan 31, 2026",
+          "tag": "Upwork Automation",
+          "title": "An Upwork Sniper That Filters Bad Clients & Auto-Drafts Proposals",
+          "desc": "Beat the competition by seconds. Get instant alerts for high-ticket jobs, analyze Client Scores vs. Earnings automatically, and generate 3 custom AI cover letters before others even see the post.",
+          "htmlid": "blogs/html/upwork-sniper/blog.html"
+        }
+      ];
+      // ==========================================
+
+      document.addEventListener("DOMContentLoaded", function() {
+        const blogContainer = document.getElementById('blog-posts-container');
+        
+        // Loop through the data and generate HTML for each blog
+        blogData.forEach((blog, index) => {
+          // Construct the link (Assumes blog file is in "blogs/" folder)
+          // If your blogs are in "blogs/html/", change this to: `blogs/html/${blog.htmlid}.html`
+          const blogLink = blog.htmlid;
+
+          const blogCard = `
+            <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
+              <div class="blog-item-wrapper wow fadeInUp" data-wow-delay="${0.2 + (index * 0.1)}s">
+                <div class="blog-item-img">
+                  <a href="${blogLink}">
+                    <img src="${blog.img}" alt="${blog.title}">
+                  </a>
+                </div>
+                <div class="blog-item-text">
+                  <div class="meta-tags">
+                    <span class="date"><i class="lni-calendar"></i> ${blog.date}</span>
+                    <span class="tags"><i class="lni-tag"></i> ${blog.tag}</span>
+                  </div>
+                  <div class="title"><h3><a href="${blogLink}">${blog.title}</a></h3></div>
+                  <p>${blog.desc}</p>
+                  <a href="${blogLink}" class="read-more">Read More <i class="lni-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          `;
+          
+          blogContainer.innerHTML += blogCard;
+        });
+
+        if(blogData.length === 0) {
+             blogContainer.innerHTML = '<div class="col-12 text-center"><p>No blog posts found.</p></div>';
+        }
+      });
+    </script>
+      
+  </body>
+</html>
