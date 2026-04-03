@@ -187,6 +187,11 @@ button:focus {
   color: #FFC107	;
 }
 
+.social-icon{
+  display: flex;
+  align-items: center;
+}
+
 .social-icon a {
   color: #666;
   background: #fff;
@@ -208,6 +213,8 @@ button:focus {
   color: #fff !important;
 }
 
+
+
 .social-icon .facebook:hover {
   background: #3b5999;
 }
@@ -217,7 +224,17 @@ button:focus {
 }
 
 .social-icon .instagram:hover {
-  background: #D6274D;
+  background: #d627b9;
+}
+
+.social-icon .youtube {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon .youtube:hover {
+  background: #d62727;
 }
 
 .social-icon .linkedin:hover {
