@@ -325,9 +325,6 @@ hr {
 /* ==========================================================================
   8. Features Section Style
    ========================================================================== */
-#features {
-  background: #fff;
-}
 
 #features .icon {
   display: inline-block;
@@ -363,6 +360,7 @@ hr {
   transition: all .3s ease-in-out;
   position: relative;
   top: 0;
+  background-color: transparent;
 }
 
 #features .box-item .icon {
