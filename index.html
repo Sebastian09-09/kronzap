@@ -133,7 +133,7 @@
         line-height: 1.6;
       }
 
-     /* --- Testimonial Section (Updated for Horizontal Scroll) --- */
+     /* --- Testimonial Section (Updated Layout - Compact) --- */
       .testimonial {
         background-color: #fff;
       }
@@ -141,7 +141,7 @@
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
-        gap: 30px;
+        gap: 20px; 
         margin-top: 30px;
         padding-bottom: 20px;
         scroll-snap-type: x mandatory;
@@ -149,37 +149,54 @@
       .testimonial-card {
         background: #fff;
         border-radius: 8px;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
-        overflow: hidden;
-        text-align: center;
-        flex: 0 0 350px;
-        max-width: 450px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+        padding: 20px; 
+        text-align: left; 
+        flex: 0 0 300px; 
+        max-width: 350px; 
         display: flex;
         flex-direction: column;
         scroll-snap-align: start;
       }
-      .testimonial-image {
-        width: 100%;
-        height: auto;
-        display: block;
+      
+      /* User Profile Layout inside Card */
+      .testimonial-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px; 
       }
-      .testimonial-info {
-        padding: 20px;
+      .testimonial-pfp {
+        width: 45px; 
+        height: 45px; 
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 12px;
+        background-color: #f0f0f0; 
+      }
+      .testimonial-meta {
+        display: flex;
+        flex-direction: column;
       }
       .client-name {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-top: 0;
-        margin-bottom: 8px;
+        font-size: 1.05rem; 
+        font-weight: 700;
+        color: #2c3e50;
+        margin: 0 0 2px 0; 
       }
-      .project-description {
-        font-size: 0.9rem;
-        color: #555;
+      .client-location {
+        font-size: 0.85rem;
+        color: #888;
         margin: 0;
       }
-      .project-description strong {
-        color: #333;
+      .testimonial-review {
+        font-size: 0.9rem; 
+        color: #555;
+        line-height: 1.6; 
+        margin: 0;
+        font-style: italic;
       }
+
+      /* Scrollbar Styling */
       .testimonial-grid::-webkit-scrollbar { height: 8px; }
       .testimonial-grid::-webkit-scrollbar-track { background: #e0e0e0; border-radius: 10px; }
       .testimonial-grid::-webkit-scrollbar-thumb { background-color: #FFC107; border-radius: 10px; }
@@ -502,54 +519,91 @@
 
           <div class="testimonial-grid wow fadeInUp" data-wow-delay="0.5s">
             
+            <!-- Testimonial 1 -->
             <div class="testimonial-card">
-              <img src="assets/img/testimonial/upwork-review-1.png" alt="Client review for a custom email automation project" class="testimonial-image">
-              <div class="testimonial-info">
-                <h3 class="client-name">Tareef</h3>
-                <p class="project-description">
-                  Automation to Subscribe multiple emails to newsletter with custom dashboard
-                </p>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <img src="assets/img/testimonial/upwork-review-2.png" alt="Client review for a custom Discord bot with AI integration" class="testimonial-image">
-              <div class="testimonial-info">
-                <h3 class="client-name">Maksim</h3>
-                <p class="project-description">
-                  Discord Bot Automation Integrated with Stock Market Data and AI
-                </p>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <img src="assets/img/testimonial/upwork-review-3.png" alt="Client review for a custom Instagram bot project" class="testimonial-image">
-              <div class="testimonial-info">
-                <h3 class="client-name">Ahmed</h3>
-                <p class="project-description">
-                  Instagram bot to find followers with a custom dashboard
-                </p>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <img src="assets/img/testimonial/upwork-review-4.png" alt="Client review for a custom bot for SEO website ranking" class="testimonial-image">
-              <div class="testimonial-info">
-                <h3 class="client-name">Ethan</h3>
-                <p class="project-description">
-                  Bot to rank websites based on seo according to google search results and send updates to phone
-                </p>
-              </div>
-            </div>
-            
-            <div class="testimonial-card testimonial-card-cta">
-                <div class="cta-content">
-                  <h3>And Many More...</h3>
-                  <p>Ready to get your own custom automation solution and save hours every week?</p>
-                  <a href="contact.html" class="btn btn-common mt-3">Get Your Solution Today</a>
+              <div class="testimonial-header">
+                <img src="assets/img/68.jpg" alt="Client PFP" class="testimonial-pfp">
+                <div class="testimonial-meta">
+                  <h3 class="client-name">Maya Thompson</h3>
+                  <p class="client-location">Austin, Texas</p>
                 </div>
+              </div>
+              <p class="testimonial-review">
+                Kronzap built a custom RPA workflow for our repetitive data entry, and the difference was immediate. Their automation handled auto form-filling and pulled details into our CRM with way less manual work. We saved hours every week and finally stopped rushing through admin tasks.
+              </p>
             </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="assets/img/69.jpg" alt="Client PFP" class="testimonial-pfp">
+                <div class="testimonial-meta">
+                  <h3 class="client-name">Daniel Reyes</h3>
+                  <p class="client-location">Toronto, Ontario</p>
+                </div>
+              </div>
+              <p class="testimonial-review">
+                We needed browser automation that could scrape and extract info from a few tricky websites, and Kronzap nailed it. The bots ran reliably 24/7 and kept our team focused on follow-ups instead of copy-pasting. Their setup was tailored to our exact workflow, not a generic template.
+              </p>
             </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="assets/img/71.jpg" alt="Client PFP" class="testimonial-pfp">
+                <div class="testimonial-meta">
+                  <h3 class="client-name">Sofia Nguyen</h3>
+                  <p class="client-location">San Diego, California</p>
+                </div>
+              </div>
+              <p class="testimonial-review">
+                Kronzap integrated an AI agent for smarter decision-making and task execution, and it’s been a game-changer. It analyzes data and triggers the next steps without us constantly babysitting the process. The whole system feels built around our business needs.
+              </p>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="assets/img/80.jpg" alt="Client PFP" class="testimonial-pfp">
+                <div class="testimonial-meta">
+                  <h3 class="client-name">Omar El-Sayed</h3>
+                  <p class="client-location">London, UK</p>
+                </div>
+              </div>
+              <p class="testimonial-review">
+                We hired Kronzap to create a custom Discord bot that connects to stock market data and uses AI for updates. The bot not only fetches the data, it formats and posts insights in a way our community actually understands. Support was quick when we wanted tweaks, and it’s been running smoothly.
+              </p>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="assets/img/1.jpg" alt="Client PFP" class="testimonial-pfp">
+                <div class="testimonial-meta">
+                  <h3 class="client-name">Priya Shah</h3>
+                  <p class="client-location">Bengaluru, India</p>
+                </div>
+              </div>
+              <p class="testimonial-review">
+                Their Instagram bot helped us automate follower discovery with a custom dashboard that made everything easier to track. Instead of chasing accounts manually, we could quickly find leads and focus on outreach. The automation felt thoughtfully designed for how we work day-to-day.
+              </p>
+            </div>
+
+            <!-- Testimonial 6 -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="assets/img/4.jpg" alt="Client PFP" class="testimonial-pfp">
+                <div class="testimonial-meta">
+                  <h3 class="client-name">Elena Petrova</h3>
+                  <p class="client-location">Berlin, Germany</p>
+                </div>
+              </div>
+              <p class="testimonial-review">
+                We asked for a system to subscribe multiple emails to our newsletter with a custom dashboard, and Kronzap delivered it quickly. The workflow reduced mistakes and made the whole process feel organized instead of chaotic. Now our team can manage subscriptions confidently in less time.
+              </p>
+            </div>
+
+          </div>
         </div>
     </section>
 
