@@ -1,712 +1,616 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KronZap | We Automate Your Manual Work</title>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <title>KronZap | Custom RPA, Web Automation, Browser Extensions & AI Bots</title>
+  :root {
+    --purple: #534AB7;
+    --purple-light: rgba(83,74,183,0.15);
+    --purple-mid: #7F77DD;
+    --bg:   #212121;
+    --bg2:  #2a2a2a;
+    --bg3:  #313131;
+    --text: #ECECEC;
+    --text2:#A0A0A0;
+    --text3:#636363;
+    --border:#3a3a3a;
+    --radius:10px;
+    --radius-lg:14px;
+  }
 
-    <meta name="description" content="KronZap builds custom automation solutions. We specialize in Custom RPA, Web & Browser Automation, Browser Extensions, AI Agents, and Bots to streamline your business workflows.">
-    
-    <meta name="keywords" content="Custom RPA, Custom Web Automation, Custom Browser Automation, Custom Browser Extension, Custom AI Agents, Custom Bots, workflow automation, software bots">
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="assets/fonts/line-icons.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.css">
-    
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/nivo-lightbox.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(33,33,33,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between; height: 60px;
+  }
+  .nav-logo { font-size: 18px; font-weight: 600; color: var(--text); text-decoration: none; }
+  .nav-logo span { color: var(--purple-mid); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { font-size: 14px; color: var(--text2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--purple); color: #fff; border: none;
+    border-radius: var(--radius); padding: 9px 20px;
+    font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; transition: opacity .2s;
+  }
+  .nav-cta:hover { opacity: .85; }
 
-    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
+  /* SHARED */
+  .section { padding: 90px 5%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .alt { background: var(--bg2); }
 
-    <style>
-      .section-padding {
-        padding: 100px 0;
-      }
-      /* --- Hero Section --- */
-      #hero-area {
-        background: #f8f9fa;
-      }
-      .hero-area-bg .contents .head-title {
-        font-size: 3rem;
-        font-weight: 700;
-      }
-      .hero-area-bg .contents p {
-        font-size: 1.15rem;
-        color: #555;
-      }
-      .btn-common {
-        background: #FFC107 !important;
-        color: #2c3e50 !important;
-        border-color: #FFC107 !important;
-        font-weight: 600;
-        padding: 12px 30px;
-      }
-      .btn-common:hover {
-        background: #e0a800 !important;
-        border-color: #e0a800 !important;
-      }
-      .btn-border {
-        border: 1px solid #2c3e50 !important;
-        color: #2c3e50 !important;
-        background: transparent !important;
-        font-weight: 600;
-        padding: 12px 30px;
-      }
-      .btn-border:hover {
-        background: #2c3e50 !important;
-        color: #fff !important;
-      }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--purple-light); color: var(--purple-mid);
+    font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+    border-radius: 999px; padding: 4px 12px; margin-bottom: 1.25rem;
+  }
+  .section-title { font-size: 32px; font-weight: 600; color: var(--text); margin-bottom: .75rem; line-height: 1.25; }
+  .section-sub { font-size: 16px; color: var(--text2); max-width: 520px; margin-bottom: 2.5rem; line-height: 1.65; }
 
-      /* --- Services Section --- */
-      .service-card {
-        background: #ffffff;
-        padding: 40px 30px;
-        border-radius: 8px;
-        box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-align: center;
-        margin-bottom: 30px;
-        height: 100%;
-      }
-      .service-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-      }
-      .service-icon {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 30px auto;
-        background: #FFC107;
-        color: #2c3e50;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2.5rem;
-      }
-      .service-card h3 {
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
-      .service-card p {
-        color: #666;
-        line-height: 1.6;
-      }
-      
-      /* --- Features Section (Restored with Image) --- */
-      .box-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 30px;
-      }
-      .content-left .box-item {
-        text-align: right;
-        flex-direction: row-reverse;
-      }
-      .content-right .box-item {
-        text-align: left;
-      }
-      .box-item .icon {
-        color: #2c3e50;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        min-width: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-      }
-      .box-item .text h4 {
-        font-weight: 600;
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-      }
-      .box-item .text p {
-        color: #555;
-        line-height: 1.6;
-      }
+  /* HERO */
+  .hero { padding: 100px 5% 90px; border-bottom: 1px solid var(--border); }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 999px; padding: 5px 14px; font-size: 12px; color: var(--text2); margin-bottom: 1.5rem;
+  }
+  .hero-badge span { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; display: inline-block; }
+  .hero h1 { font-size: 48px; font-weight: 600; line-height: 1.15; color: var(--text); margin-bottom: 1.25rem; }
+  .hero h1 em { font-style: normal; color: var(--purple-mid); }
+  .hero-sub { font-size: 17px; color: var(--text2); line-height: 1.7; margin-bottom: 2rem; max-width: 480px; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 2.5rem; }
 
-     /* --- Testimonial Section (Updated Layout - Compact) --- */
-      .testimonial {
-        background-color: #fff;
-      }
-      .testimonial-grid {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 20px; 
-        margin-top: 30px;
-        padding-bottom: 20px;
-        scroll-snap-type: x mandatory;
-      }
-      .testimonial-card {
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
-        padding: 20px; 
-        text-align: left; 
-        flex: 0 0 300px; 
-        max-width: 350px; 
-        display: flex;
-        flex-direction: column;
-        scroll-snap-align: start;
-      }
-      
-      /* User Profile Layout inside Card */
-      .testimonial-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px; 
-      }
-      .testimonial-pfp {
-        width: 45px; 
-        height: 45px; 
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 12px;
-        background-color: #f0f0f0; 
-      }
-      .testimonial-meta {
-        display: flex;
-        flex-direction: column;
-      }
-      .client-name {
-        font-size: 1.05rem; 
-        font-weight: 700;
-        color: #2c3e50;
-        margin: 0 0 2px 0; 
-      }
-      .client-location {
-        font-size: 0.85rem;
-        color: #888;
-        margin: 0;
-      }
-      .testimonial-review {
-        font-size: 0.9rem; 
-        color: #555;
-        line-height: 1.6; 
-        margin: 0;
-        font-style: italic;
-      }
+  .btn-primary {
+    background: var(--purple); color: #fff; border: none;
+    border-radius: var(--radius); padding: 13px 26px;
+    font-size: 15px; font-weight: 500; cursor: pointer; text-decoration: none; transition: opacity .2s; display: inline-block;
+  }
+  .btn-primary:hover { opacity: .85; }
+  .btn-ghost {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border); border-radius: var(--radius); padding: 13px 26px;
+    font-size: 15px; font-weight: 500; cursor: pointer; text-decoration: none; transition: background .2s; display: inline-block;
+  }
+  .btn-ghost:hover { background: var(--bg3); }
 
-      /* Scrollbar Styling */
-      .testimonial-grid::-webkit-scrollbar { height: 8px; }
-      .testimonial-grid::-webkit-scrollbar-track { background: #e0e0e0; border-radius: 10px; }
-      .testimonial-grid::-webkit-scrollbar-thumb { background-color: #FFC107; border-radius: 10px; }
+  .hero-pills { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .hero-pills .label { font-size: 13px; color: var(--text3); }
+  .pill {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 999px; padding: 4px 12px; font-size: 13px; color: var(--text2);
+  }
 
-      /* --- Styling for the CTA Testimonial Card --- */
-      .testimonial-card-cta {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background: linear-gradient(135deg, #fff, #fff8e1);
-      }
-      .cta-content h3 {
-        font-size: 1.6rem;
-        font-weight: 700;
-        margin-bottom: 15px;
-      }
-      .cta-content p {
-        font-size: 1rem;
-        color: #555;
-        margin-bottom: 25px;
-        line-height: 1.5;
-      }
-      .cta-button {
-        display: inline-block;
-        background-color: #FFC107;
-        color: #1a1a1a;
-        padding: 12px 30px;
-        border-radius: 50px;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.3s ease-in-out;
-        border: none;
-        cursor: pointer;
-      }
-      .cta-button:hover {
-        background-color: #ffca2c;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      } 
+  /* HERO VISUAL */
+  .hero-visual {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 28px;
+  }
+  .pipeline { display: flex; flex-direction: column; gap: 10px; }
+  .pipe-step {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 12px 16px;
+  }
+  .pipe-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: var(--purple-light); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;
+  }
+  .pipe-label { font-size: 13px; font-weight: 500; color: var(--text); }
+  .pipe-desc { font-size: 12px; color: var(--text2); margin-top: 2px; }
+  .pipe-arrow { text-align: center; color: var(--text3); font-size: 16px; }
+  .pipe-badge {
+    display: inline-block; background: rgba(34,197,94,.15); color: #4ade80;
+    font-size: 11px; font-weight: 500; border-radius: 999px; padding: 2px 8px; margin-top: 4px;
+  }
 
+  /* STEPS */
+  .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .step-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 28px 24px;
+  }
+  .step-num {
+    width: 36px; height: 36px; background: var(--purple-light); color: var(--purple-mid);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 600; margin-bottom: 16px;
+  }
+  .step-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .step-desc { font-size: 14px; color: var(--text2); line-height: 1.6; }
 
-    /* --- Clients Section Fixed --- */
-    .clients-section {
-      padding: 60px 0;
-      /*background: #fff;*/
-      /*border-bottom: 1px solid #eee;*/
-    }
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .service-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 28px 24px; transition: border-color .2s, transform .2s;
+  }
+  .service-card:hover { border-color: var(--purple); transform: translateY(-2px); }
+  .service-icon {
+    width: 44px; height: 44px; background: var(--purple-light); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px;
+  }
+  .service-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .service-desc { font-size: 14px; color: var(--text2); line-height: 1.6; margin-bottom: 16px; }
+  .service-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 999px; padding: 3px 10px; font-size: 11px; color: var(--text2);
+  }
 
-    .client-logo-wrapper {
-      display: flex;
-      justify-content: space-evenly; /* Centers the row of logos */
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 50px; /* Space between logos */
-    }
+  /* RESULTS */
+  .results-grid { display: flex; flex-direction: column; gap: 14px; }
+  .result-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 24px 28px;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  }
+  .result-left { flex: 1; }
+  .result-type {
+    display: inline-block; background: var(--purple-light); color: var(--purple-mid);
+    font-size: 11px; font-weight: 500; border-radius: 999px; padding: 3px 10px; margin-bottom: 10px;
+  }
+  .result-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .result-desc { font-size: 14px; color: var(--text2); line-height: 1.55; }
+  .result-stat { text-align: right; flex-shrink: 0; }
+  .stat-num { font-size: 38px; font-weight: 600; color: var(--purple-mid); line-height: 1; }
+  .stat-label { font-size: 12px; color: var(--text3); margin-top: 4px; }
 
-    /* This is the magic "container" that standardizes everything */
-    .client-logo-wrapper > div {
-      height: 60px; /* Fixed height for the row */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      filter: grayscale(100%);
-      opacity: 0.6;
-      transition: all 0.3s ease;
-    }
+  /* TESTIMONIALS */
+  .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .testi-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 24px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .testi-quote { font-size: 14px; color: var(--text2); line-height: 1.7; margin-bottom: 20px; flex: 1; }
+  .testi-quote::before { content: '"'; color: var(--purple-mid); font-size: 24px; line-height: 1; display: block; margin-bottom: 8px; }
+  .testi-author { display: flex; align-items: center; gap: 10px; }
+  .testi-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--purple-light); color: var(--purple-mid);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600; flex-shrink: 0;
+  }
+  .testi-name { font-size: 13px; font-weight: 600; color: var(--text); }
+  .testi-role { font-size: 12px; color: var(--text3); }
 
-    .client-logo-wrapper > div:hover {
-      filter: grayscale(0%);
-      opacity: 1;
-      transform: scale(1.05);
-    }
+  /* FAQ */
+  .faq-list { max-width: 720px; margin: 0 auto; text-align: left; }
+  #faq .section-inner { text-align: center; }
+  #faq .section-sub { margin-left: auto; margin-right: auto; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q {
+    width: 100%; background: none; border: none; text-align: left;
+    padding: 20px 0; font-size: 15px; font-weight: 500; color: var(--text);
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .faq-q:hover { color: var(--purple-mid); }
+  .faq-chevron { font-size: 20px; color: var(--text3); transition: transform .25s; flex-shrink: 0; }
+  .faq-item.open .faq-chevron { transform: rotate(45deg); }
+  .faq-a {
+    font-size: 14px; color: var(--text2); line-height: 1.7;
+    max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 20px; }
 
-    /* This forces the images to behave within the 60px height */
-    .client-logo-wrapper img {
-      max-height: 100%; 
-      width: auto;      /* Keeps aspect ratio */
-      max-width: 200px; /* Prevents long logos from taking over the screen */
-      object-fit: contain;
-    }
+  /* CTA SECTION */
+  .cta-section { padding: 90px 5%; border-top: 1px solid var(--border); }
+  .cta-centered {
+    max-width: 860px; margin: 0 auto; text-align: center;
+  }
+  .cta-centered .eyebrow { margin-bottom: 1.25rem; }
+  .cta-centered .section-sub { max-width: 520px; }
+  .calendly-box {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); overflow: hidden; margin-top: 2rem;
+  }
 
-    @media (max-width: 768px) {
-      .client-logo-wrapper {
-        gap: 30px;
-      }
-      .client-logo-wrapper > div {
-        height: 40px; /* Smaller height for mobile (Redmi/Nothing screens) */
-      }
-    }
+  /* FOOTER */
+  footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 48px 5% 32px; }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px;
+  }
+  .footer-logo { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+  .footer-logo span { color: var(--purple-mid); }
+  .footer-tagline { font-size: 14px; color: var(--text2); line-height: 1.6; max-width: 280px; margin-bottom: 20px; }
+  .footer-email { font-size: 13px; color: var(--purple-mid); text-decoration: none; }
+  .footer-col h4 { font-size: 13px; font-weight: 600; color: var(--text2); margin-bottom: 14px; text-transform: uppercase; letter-spacing: .06em; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { font-size: 14px; color: var(--text2); text-decoration: none; transition: color .2s; }
+  .footer-col a:hover { color: var(--purple-mid); }
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    border-top: 1px solid var(--border); padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 13px; color: var(--text3); }
 
-    </style>
-  </head>
-  <body>
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 8px;
+    min-width: 180px;
+    z-index: 200;
+    top: calc(100% + 2px);
+  }
 
-    <header id="header-wrap">
-      <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
-        <div class="container">
-          <div style="display: flex; flex-wrap: nowrap;align-items: center;">
-          <a href="index.html" class="navbar-brand"><img width="120px" src="assets/img/logo.png" alt="KronZap Logo"></a>       
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="lni-menu"></i>
-          </button>
-          </div>
-          
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
-              <li class="nav-item">
-                <a class="nav-link" href="#hero-area">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#services">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#testimonial">Testimonials</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-            </ul>
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 12px;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+  .nav-dropdown-item {
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--text3);
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .hero h1 { font-size: 36px; }
+    .steps-grid, .services-grid, .testi-grid { grid-template-columns: 1fr; }
+    .result-card { flex-direction: column; align-items: flex-start; }
+    .result-stat { text-align: left; }
+    .cta-banner { flex-direction: column; text-align: center; padding: 48px 32px; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 600px) {
+    .hero { padding: 60px 5%; }
+    .section { padding: 60px 5%; }
+    .hero h1 { font-size: 30px; }
+    .section-title { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">Kron<span>Zap</span></a>
+    <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="#">Products ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-item">Coming soon</em></div>
+      </div>
+    </li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#results">Work</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+    <a class="nav-cta" href="#contact">Book a call</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge"><span></span> Available for new projects</div>
+      <h1>Your team is wasting hours on <em>manual work.</em><br>We automate the whole pipeline.</h1>
+      <p class="hero-sub">Focus on growing your business. Tell us what's consuming your time, and we'll build a custom solution to take it off your plate.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#contact">Book a free call →</a>
+        <a class="btn-ghost" href="#results">See our work</a>
+      </div>
+      <div class="hero-pills">
+        <span class="label">We've built for</span>
+        <span class="pill">SaaS startups</span>
+        <span class="pill">Sales teams</span>
+        <span class="pill">Agencies</span>
+        <span class="pill">E-commerce</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="pipeline">
+        <div class="pipe-step">
+          <div class="pipe-icon">📥</div>
+          <div>
+            <div class="pipe-label">Input</div>
+            <div class="pipe-desc">Manual data, browser actions, form fills</div>
           </div>
         </div>
-      </nav>
-
-      <div id="hero-area" class="hero-area-bg">
-        <div class="container">      
-          <div class="row align-items-center">
-            <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-              <div class="contents">
-                <h1 class="head-title">Custom Automation: RPA, AI Agents, and Bots by KronZap</h1>
-                <p>We build powerful Custom RPA, Browser Automation, AI Agents, and Bots. Boost your productivity and streamline your business workflows with tailor-made solutions.</p>
-                <div class="header-button">
-                  <a href="#services" class="btn btn-common page-scroll">Explore Our Solutions</a>
-                  <a href="https://youtu.be/izJq-0UHWfA" target="_blank" class="btn btn-border video-popup">Watch Demo</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
-              <div class="intro-img">
-                <img class="img-fluid" src="assets/img/intro-mobile.png" alt="KronZap Custom Automation Solutions">
-              </div>            
-            </div>
-          </div> 
-        </div> 
-      </div>
-    </header>
-
-
-    <div id="clients" class="clients-section">
-      <div class="container" style="margin-bottom: 40px;">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-header text-center mb-5">
-              <p style="
-                text-transform: uppercase; 
-                letter-spacing: 5px; /* Extra spacing for that premium feel */
-                font-size: 0.75rem; 
-                font-weight: 800; 
-                color: #999; /* Subtle gray so the logos pop more than the text */
-                margin-bottom: 0;
-              ">
-                Trusted By
-              </p>
-            </div>
-
-            <div class="client-logo-wrapper wow fadeIn" data-wow-delay="0.3s">
-              <div class="client-item">
-                <img src="assets/clients/valiance.png" alt="Valiance Solutions">
-              </div>
-              <div class="client-item">
-                <img src="assets/clients/apple.png" alt="Apple">
-              </div>
-              <div class="client-item">
-                <img src="assets/clients/boomerang.png" alt="Boomerang">
-              </div>
-              <div class="client-item">
-                <img src="assets/clients/portlandia.png" alt="Portlandia Electric Supply">
-              </div>
-            </div>
+        <div class="pipe-arrow">↓</div>
+        <div class="pipe-step">
+          <div class="pipe-icon">⚙️</div>
+          <div>
+            <div class="pipe-label">Process</div>
+            <div class="pipe-desc">Custom scraper, extension, or RPA bot</div>
+          </div>
+        </div>
+        <div class="pipe-arrow">↓</div>
+        <div class="pipe-step">
+          <div class="pipe-icon">🤖</div>
+          <div>
+            <div class="pipe-label">Decision</div>
+            <div class="pipe-desc">AI logic or human-in-the-loop rules</div>
+          </div>
+        </div>
+        <div class="pipe-arrow">↓</div>
+        <div class="pipe-step">
+          <div class="pipe-icon">📊</div>
+          <div>
+            <div class="pipe-label">Output</div>
+            <div class="pipe-desc">CRM, spreadsheet, dashboard, Slack</div>
+            <div class="pipe-badge">Runs 24/7</div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
+<section class="section" id="how">
+  <div class="section-inner">
+    <div class="eyebrow">How it works</div>
+    <h2 class="section-title">Three steps, fully hands-off</h2>
+    <p class="section-sub">You tell us the problem. We build the solution. It runs without you.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-title">Tell us what's manual</div>
+        <p class="step-desc">Book a free call and walk us through what your team does repeatedly. No technical knowledge needed.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-title">We build the pipeline</div>
+        <p class="step-desc">Custom scraper, browser extension, or automation workflow — whatever solves your problem best.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-title">It runs itself</div>
+        <p class="step-desc">Delivered, monitored, and maintained. You focus on the work that actually needs a human.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="services" class="section-padding bg-gray">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Our Custom Automation Services</h2>
-          <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="service-card wow fadeInUp" data-wow-delay="0.4s">
-              <div class="service-icon"><i class="lni-cog"></i></div>
-              <h3>Custom RPA</h3>
-              <p>We build Custom Robotic Process Automation solutions to handle your repetitive business tasks with unmatched precision and speed.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="service-card wow fadeInUp" data-wow-delay="0.6s">
-              <div class="service-icon"><i class="lni-world"></i></div>
-              <h3>Custom Web Automation</h3>
-              <p>Our Custom Web Automation services scrape, extract, and interact with websites to save time and gather valuable data for you.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="service-card wow fadeInUp" data-wow-delay="0.8s">
-              <div class="service-icon"><i class="lni-chrome"></i></div>
-              <h3>Custom Browser Automation</h3>
-              <p>From auto form-filling to complex workflows, our Custom Browser Automation makes your web browser work for you, 24/7.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="service-card wow fadeInUp" data-wow-delay="1.0s">
-              <div class="service-icon"><i class="lni-plug"></i></div>
-              <h3>Custom Browser Extension</h3>
-              <p>Get a Custom Browser Extension to boost productivity and add powerful, integrated features directly into your browser.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="service-card wow fadeInUp" data-wow-delay="1.2s">
-              <div class="service-icon"><i class="lni-bulb"></i></div>
-              <h3>Custom AI Agents</h3>
-              <p>Deploy intelligent Custom AI Agents that handle decision-making, data analysis, and smart task execution autonomously.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="service-card wow fadeInUp" data-wow-delay="1.4s">
-              <div class="service-icon"><i class="lni-android"></i></div>
-              <h3>Custom Bots</h3>
-              <p>We build Custom Bots for any platform to automate your community management, business workflows, and data flows.</p>
-            </div>
-          </div>
+<section class="section alt" id="services">
+  <div class="section-inner">
+    <div class="eyebrow">Services</div>
+    <h2 class="section-title">What we build</h2>
+    <p class="section-sub">Three core capabilities. Endlessly combinable.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🧩</div>
+        <div class="service-title">Chrome Extensions</div>
+        <p class="service-desc">Custom browser tools that work inside any site your team uses daily — LinkedIn, CRMs, marketplaces, anything.</p>
+        <div class="service-tags">
+          <span class="tag">Browser automation</span>
+          <span class="tag">Logged-in sessions</span>
+          <span class="tag">One-click workflows</span>
         </div>
       </div>
-    </section>
-
-    <section id="about" class="about-area section-padding">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 col-md-12 col-xs-12">
-            <div class="about-wrapper wow fadeInLeft" data-wow-delay="0.3s">
-              <p class="text-muted" style="text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Automate. Optimize. Scale.</p>
-              <h2 class="section-title mt-2 mb-4" style="font-size: 2.5rem;">Smart Automation for Modern Businesses</h2>
-              <p class="mb-4" style="color: #555; line-height: 1.7;">
-                At Kronzap, we build custom automation solutions that save you time, reduce manual work, and let you focus on growth. 
-                Whether you’re a startup or an enterprise, we turn your repetitive processes into smooth, hands-off operations.
-              </p>
-              <a href="about.html" class="btn btn-common">Read More</a>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12 col-xs-12 wow fadeInRight" data-wow-delay="0.5s">
-            <img class="img-fluid" src="assets/img/about.png" alt="KronZap custom automation process diagram">
-          </div>
+      <div class="service-card">
+        <div class="service-icon">🗄️</div>
+        <div class="service-title">Data Scraping</div>
+        <p class="service-desc">Bulk data from any source — cleaned, structured, and piped directly into your CRM or spreadsheet.</p>
+        <div class="service-tags">
+          <span class="tag">Proxy rotation</span>
+          <span class="tag">Scheduled runs</span>
+          <span class="tag">Any website</span>
         </div>
       </div>
-    </section>
-
-    <section id="features" class="section-padding bg-gray">
-      <div class="container">
-        <div class="section-header text-center">          
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Why Choose Kronzap</h2>
-          <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-        </div>
-        <div class="row align-items-center">
-          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <div class="content-left">
-              <div class="box-item wow fadeInLeft" data-wow-delay="0.4s">
-                <span class="icon"><i class="lni-rocket"></i></span>
-                <div class="text"><h4>Tailor-Made Solutions</h4><p>We design custom automation workflows for your exact business needs, not one-size-fits-all tools.</p></div>
-              </div>
-              <div class="box-item wow fadeInLeft" data-wow-delay="0.6s">
-                <span class="icon"><i class="lni-laptop-phone"></i></span>
-                <div class="text"><h4>Cross-Platform</h4><p>Our custom bots and tools work seamlessly on desktop, web, and mobile so you can manage tasks anywhere.</p></div>
-              </div>
-              <div class="box-item wow fadeInLeft" data-wow-delay="0.8s">
-                <span class="icon"><i class="lni-cog"></i></span>
-                <div class="text"><h4>API & System Integrations</h4><p>We connect your favorite apps, CRMs, and databases to create a single, streamlined ecosystem.</p></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <div class="show-box wow fadeInUp" data-wow-delay="0.3s">
-              <img src="assets/img/feature/intro-mobile.png" alt="Kronzap Custom Automation Dashboard on a phone">
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <div class="content-right">
-              <div class="box-item wow fadeInRight" data-wow-delay="0.4s">
-                <span class="icon"><i class="lni-leaf"></i></span>
-                <div class="text"><h4>Scalable for Growth</h4><p>From startups to enterprises, our custom automation solutions are built to grow with your business.</p></div>
-              </div>
-              <div class="box-item wow fadeInRight" data-wow-delay="0.6s">
-                <span class="icon"><i class="lni-layers"></i></span>
-                <div class="text"><h4>Data Scraping & Insights</h4><p>Collect and process valuable data from any source to help you make smarter business decisions.</p></div>
-              </div>
-              <div class="box-item wow fadeInRight" data-wow-delay="0.8s">
-                <span class="icon"><i class="lni-envelope"></i></span>
-                <div class="text"><h4>Dedicated Support</h4><p>Our team is here to ensure your automations run flawlessly, with quick help when you need it.</p></div>
-              </div>
-            </div>
-          </div>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <div class="service-title">Workflow Automation</div>
+        <p class="service-desc">End-to-end pipelines that replace your most expensive manual processes. Input to output, fully automated.</p>
+        <div class="service-tags">
+          <span class="tag">API integrations</span>
+          <span class="tag">AI decision layer</span>
+          <span class="tag">24/7 operation</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="testimonial" class="testimonial section-padding">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-12">
-              <div class="section-header text-center">
-                <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">What Our Clients Say</h2>
-                <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-grid wow fadeInUp" data-wow-delay="0.5s">
-            
-            <!-- Testimonial 1 -->
-            <div class="testimonial-card">
-              <div class="testimonial-header">
-                <img src="assets/img/68.jpg" alt="Client PFP" class="testimonial-pfp">
-                <div class="testimonial-meta">
-                  <h3 class="client-name">Maya Thompson</h3>
-                  <p class="client-location">Austin, Texas</p>
-                </div>
-              </div>
-              <p class="testimonial-review">
-                Kronzap built a custom RPA workflow for our repetitive data entry, and the difference was immediate. Their automation handled auto form-filling and pulled details into our CRM with way less manual work. We saved hours every week and finally stopped rushing through admin tasks.
-              </p>
-            </div>
-
-            <!-- Testimonial 2 -->
-            <div class="testimonial-card">
-              <div class="testimonial-header">
-                <img src="assets/img/69.jpg" alt="Client PFP" class="testimonial-pfp">
-                <div class="testimonial-meta">
-                  <h3 class="client-name">Daniel Reyes</h3>
-                  <p class="client-location">Toronto, Ontario</p>
-                </div>
-              </div>
-              <p class="testimonial-review">
-                We needed browser automation that could scrape and extract info from a few tricky websites, and Kronzap nailed it. The bots ran reliably 24/7 and kept our team focused on follow-ups instead of copy-pasting. Their setup was tailored to our exact workflow, not a generic template.
-              </p>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="testimonial-card">
-              <div class="testimonial-header">
-                <img src="assets/img/71.jpg" alt="Client PFP" class="testimonial-pfp">
-                <div class="testimonial-meta">
-                  <h3 class="client-name">Sofia Nguyen</h3>
-                  <p class="client-location">San Diego, California</p>
-                </div>
-              </div>
-              <p class="testimonial-review">
-                Kronzap integrated an AI agent for smarter decision-making and task execution, and it’s been a game-changer. It analyzes data and triggers the next steps without us constantly babysitting the process. The whole system feels built around our business needs.
-              </p>
-            </div>
-
-            <!-- Testimonial 4 -->
-            <div class="testimonial-card">
-              <div class="testimonial-header">
-                <img src="assets/img/80.jpg" alt="Client PFP" class="testimonial-pfp">
-                <div class="testimonial-meta">
-                  <h3 class="client-name">Omar El-Sayed</h3>
-                  <p class="client-location">London, UK</p>
-                </div>
-              </div>
-              <p class="testimonial-review">
-                We hired Kronzap to create a custom Discord bot that connects to stock market data and uses AI for updates. The bot not only fetches the data, it formats and posts insights in a way our community actually understands. Support was quick when we wanted tweaks, and it’s been running smoothly.
-              </p>
-            </div>
-
-            <!-- Testimonial 5 -->
-            <div class="testimonial-card">
-              <div class="testimonial-header">
-                <img src="assets/img/1.jpg" alt="Client PFP" class="testimonial-pfp">
-                <div class="testimonial-meta">
-                  <h3 class="client-name">Priya Shah</h3>
-                  <p class="client-location">Bengaluru, India</p>
-                </div>
-              </div>
-              <p class="testimonial-review">
-                Their Instagram bot helped us automate follower discovery with a custom dashboard that made everything easier to track. Instead of chasing accounts manually, we could quickly find leads and focus on outreach. The automation felt thoughtfully designed for how we work day-to-day.
-              </p>
-            </div>
-
-            <!-- Testimonial 6 -->
-            <div class="testimonial-card">
-              <div class="testimonial-header">
-                <img src="assets/img/4.jpg" alt="Client PFP" class="testimonial-pfp">
-                <div class="testimonial-meta">
-                  <h3 class="client-name">Elena Petrova</h3>
-                  <p class="client-location">Berlin, Germany</p>
-                </div>
-              </div>
-              <p class="testimonial-review">
-                We asked for a system to subscribe multiple emails to our newsletter with a custom dashboard, and Kronzap delivered it quickly. The workflow reduced mistakes and made the whole process feel organized instead of chaotic. Now our team can manage subscriptions confidently in less time.
-              </p>
-            </div>
-
-          </div>
+<section class="section" id="results">
+  <div class="section-inner">
+    <div class="eyebrow">Results</div>
+    <h2 class="section-title">What clients actually got</h2>
+    <p class="section-sub">Real projects. Real numbers.</p>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-left">
+          <div class="result-type">Chrome Extension</div>
+          <div class="result-title">Sales team at a SaaS startup</div>
+          <p class="result-desc">Was manually pulling LinkedIn profiles and copying data into their CRM every day. One-click extension now captures and syncs everything automatically.</p>
         </div>
-    </section>
-
-    <section id="contact" class="section-padding bg-gray">    
-      <div class="container">
-        <div class="section-header text-center">          
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Contact Us</h2>
-          <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+        <div class="result-stat">
+          <div class="stat-num">3hrs</div>
+          <div class="stat-label">saved per day</div>
         </div>
-        <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.4s">   
-          <div class="col-lg-7 col-md-12 col-sm-12">
-            <div class="cta-text d-flex flex-column justify-content-center h-100">
-              <h4>Have a Project in Mind?</h4>
-              <p>Let’s discuss how Kronzap can automate and scale your business. Reach us at <strong>contact@kronzap.com</strong> or click the button to get in touch.</p>
-              <a href="contact.html" class="btn btn-common mt-3" style="align-self: flex-start;">Contact Us</a>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-12 col-xs-12">
-            <div class="map">
-              <object style="border:0; height: 280px; width: 100%; border-radius: 8px;" data="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7540.787512295001!2d82.01094617811825!3d19.090374435314523!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1755057429128!5m2!1sen!2sin"></object>
-            </div>
-          </div>
+      </div>
+      <div class="result-card">
+        <div class="result-left">
+          <div class="result-type">Data Scraping</div>
+          <div class="result-title">Agency building a qualified lead list</div>
+          <p class="result-desc">Needed 500 verified contacts from a niche directory — cleaned, deduplicated, ready to import. Delivered same day.</p>
         </div>
-      </div> 
-    </section>
-
-    <footer id="footer" class="footer-area section-padding">
-      <div class="container">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
-              <div class="widget">
-                <h3 class="footer-logo"><img width="80px" src="assets/img/logo.png" alt="KronZap Logo Footer"></h3>
-                <div class="textwidget">
-                  <p>Kronzap helps businesses save hours and grow faster with powerful custom automation and AI-driven workflows.</p>
-                </div>
-                <div class="social-icon">
-                  <a target="_blank"  class="youtube" href="https://www.youtube.com/@kronzap">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5806 7.19355C21.3548 6.32258 20.6774 5.64516 19.8065 5.41935C18.2581 5 12 5 12 5C12 5 5.74194 5 4.19355 5.41935C3.32258 5.64516 2.64516 6.32258 2.41935 7.19355C2 8.77419 2 12 2 12C2 12 2 15.2581 2.41935 16.8065C2.64516 17.6774 3.32258 18.3548 4.19355 18.5806C5.74194 19 12 19 12 19C12 19 18.2581 19 19.8065 18.5806C20.6774 18.3548 21.3548 17.6774 21.5806 16.8065C22 15.2581 22 12 22 12C22 12 22 8.77419 21.5806 7.19355ZM10 15V9L15.1935 12L10 15Z" fill="#323544"/></svg>
-                  </a>
-                  <a target="_blank"  class="facebook" href="https://www.facebook.com/kronzap"><i class="lni-facebook-filled"></i></a>
-                  <a target="_blank"  class="instagram" href="https://www.instagram.com/kronzap"><i class="lni-instagram-filled"></i></a>
-                  <a target="_blank" class="linkedin" href="https://www.linkedin.com/company/kronzap/"><i class="lni-linkedin-filled"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <h3 class="footer-titel">Products</h3>
-              <ul class="footer-link">
-                <li><a href="bots.html">Custom Bots</a></li>           
-                <li><a href="scraping.html">Custom Data Scrapers</a></li>
-                <li><a href="rpa.html">Custom RPA</a></li>
-                <li><a href="extension.html">Custom Browser Extensions</a></li>
-                <li><a href="automation.html">Custom Browser Automation</a></li>           
-              </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <h3 class="footer-titel">Resources</h3>
-              <ul class="footer-link">
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="faq.html">Support & FAQ</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-              <h3 class="footer-titel">Information</h3>
-              <ul class="footer-link">
-                <li><a href="terms.html">Terms and Condition</a></li>
-                <li><a href="refund-policy.html">Refund Policy</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>  
-      </div> 
-      <div id="copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="copyright-content">
-                <p>Copyright © 2025 <a rel="nofollow" href="https://kronzap.com">KronZap</a> All Right Reserved</p>
-              </div>
-            </div>
-          </div>
+        <div class="result-stat">
+          <div class="stat-num">2hrs</div>
+          <div class="stat-label">turnaround</div>
         </div>
-      </div>   
-    </footer> 
+      </div>
+      <div class="result-card">
+        <div class="result-left">
+          <div class="result-type">Workflow Automation</div>
+          <div class="result-title">E-commerce brand syncing orders</div>
+          <p class="result-desc">Was manually moving order data between three tools every morning. Custom pipeline connected them all. Zero manual work since go-live.</p>
+        </div>
+        <div class="result-stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">hands-free</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <a href="#" class="back-to-top"><i class="lni-arrow-up"></i></a>
-    <div id="preloader"><div class="loader" id="loader-1"></div></div>
-    
-    <script src="assets/js/jquery-min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/jquery.nav.js"></script>
-    <script src="assets/js/scrolling-nav.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>      
-    <script src="assets/js/waypoints.min.js"></script>   
-    <script src="assets/js/main.js"></script>
+<section class="section alt">
+  <div class="section-inner">
+    <div class="eyebrow">Testimonials</div>
+    <h2 class="section-title">What clients say</h2>
+    <div class="testi-grid" style="grid-template-columns:repeat(2,1fr);max-width:860px;margin:0 auto;">
       
-  </body>
+      <div class="testi-card">
+        <p class="testi-quote">Understood my specifics. Service minded.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="width:36px;height:36px;border-radius:50%;overflow:hidden;padding:0;">
+            <img src="assets/img/maksim.png" alt="Maksim" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div>
+            <div class="testi-name" style="display:flex;align-items:center;gap:6px;">
+              Maksim Husak
+              <a href="https://www.upwork.com/freelancers/~014c651bd5eec9e575" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:var(--purple-light);border:1px solid var(--purple);border-radius:4px;color:var(--purple-mid);text-decoration:none;font-size:11px;line-height:1;flex-shrink:0;">↗</a>
+            </div>
+            <div class="testi-role">Discord Finance GPT · ⭐⭐⭐⭐⭐ on <img src="assets/img/upwork.svg" alt="Upwork" style="height:20px;vertical-align:middle; margin-left: 2px; margin-bottom: -2px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <p class="testi-quote">Good job</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="width:36px;height:36px;border-radius:50%;overflow:hidden;padding:0;">
+            SM
+          </div>
+          <div>
+            <div class="testi-name" style="display:flex;align-items:center;gap:6px;">
+              Serg Mazur
+              <a href="https://www.upwork.com/freelancers/~014c651bd5eec9e575" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:var(--purple-light);border:1px solid var(--purple);border-radius:4px;color:var(--purple-mid);text-decoration:none;font-size:11px;line-height:1;flex-shrink:0;">↗</a>
+            </div>
+            <div class="testi-role">Python Scraper · ⭐⭐⭐⭐⭐ on <img src="assets/img/upwork.svg" alt="Upwork" style="height:20px;vertical-align:middle; margin-left: 2px; margin-bottom: -2px;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="section-title">Common questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does a project take? <span class="faq-chevron">+</span></button>
+        <div class="faq-a">Most projects are delivered in 3–7 days. Complex pipelines can take up to 2 weeks. We give you a clear timeline on the call before anything starts.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What if the site I need scraped blocks bots? <span class="faq-chevron">+</span></button>
+        <div class="faq-a">We use rotating proxies and headless browser techniques to handle most anti-bot measures. For sites requiring a logged-in session we use a Chrome extension approach instead.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do I need to be technical to work with you? <span class="faq-chevron">+</span></button>
+        <div class="faq-a">Not at all. Just describe what you're doing manually and what you want to happen instead. We handle everything — scoping, building, testing, and deploying.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How does pricing work? <span class="faq-chevron">+</span></button>
+        <div class="faq-a">Projects are priced based on scope. Book a free call and we'll send a quote within 24 hours. No retainers, no subscriptions — straightforward project-based pricing.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What happens after delivery? <span class="faq-chevron">+</span></button>
+        <div class="faq-a">We include a testing period and handle any bugs. For ongoing maintenance we offer support packages. Most automations run without issue once deployed.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section" id="contact">
+  <div class="cta-centered">
+    <div class="eyebrow">Book a call</div>
+    <h2 class="section-title" style="text-align:center;">Tell us what's costing you time</h2>
+    <p class="section-sub" style="text-align:center;margin-left:auto;margin-right:auto;">Free 20-minute call. No pitch — just a conversation about your workflow and whether we can automate it.</p>
+    <div class="calendly-box">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/kaushalvyoum/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=534ab7" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Kron<span>Zap</span></div>
+      <p class="footer-tagline">Custom automation solutions that save your team time and let you focus on growth.</p>
+      <a class="footer-email" href="mailto:contact@kronzap.com">contact@kronzap.com</a>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Chrome Extensions</a></li>
+        <li><a href="#">Data Scraping</a></li>
+        <li><a href="#">Workflow Automation</a></li>
+        <li><a href="#">AI Agents</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 KronZap. All rights reserved.</p>
+    <p>Built for businesses that move fast.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
 </html>
