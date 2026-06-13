@@ -25,6 +25,9 @@
     <li><a href="#faq">FAQ</a></li>
   </ul>
     <a class="nav-cta" href="#contact">Book a call</a>
+    <button class="nav-hamburger" onclick="toggleMobileNav(this)" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -314,6 +317,11 @@
     document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   }
+
+  function toggleMobileNav(btn) {
+    document.querySelector('.nav-links').classList.toggle('open');
+  }
+
 </script>
 </body>
 </html>
