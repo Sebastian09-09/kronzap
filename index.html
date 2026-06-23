@@ -21,9 +21,15 @@
 
 <link rel="canonical" href="https://kronzap.com/">
 <title>KronZap | Workflow Automation, Scrapers & Chrome Extensions</title>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"></noscript>
 <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="preload" href="assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/css/styles.css"></noscript>
+
 </head>
 <body>
 
@@ -224,14 +230,14 @@
         <p class="testi-quote">Understood my specifics. Service minded.</p>
         <div class="testi-author">
           <div class="testi-avatar" style="width:36px;height:36px;border-radius:50%;overflow:hidden;padding:0;">
-            <img src="assets/img/maksim.png" alt="Maksim" style="width:100%;height:100%;object-fit:cover;">
+            <img src="assets/img/maksim.webp" alt="Maksim" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div>
             <div class="testi-name" style="display:flex;align-items:center;gap:6px;">
               Maksim Husak
               <a href="https://www.upwork.com/freelancers/~014c651bd5eec9e575" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:var(--purple-light);border:1px solid var(--purple);border-radius:4px;color:var(--purple-mid);text-decoration:none;font-size:11px;line-height:1;flex-shrink:0;">↗</a>
             </div>
-            <div class="testi-role">Discord Finance GPT · ⭐⭐⭐⭐⭐ on <img src="assets/img/upwork.svg" alt="Upwork" style="height:20px;vertical-align:middle; margin-left: 2px; margin-bottom: -2px;"></div>
+            <div class="testi-role">Discord Finance GPT · ⭐⭐⭐⭐⭐ on <img src="assets/img/upwork.svg" alt="Upwork" width="20" height="20" style="height:20px;vertical-align:middle; margin-left: 2px; margin-bottom: -2px;"> </div>
           </div>
         </div>
       </div>
@@ -247,7 +253,7 @@
               Serg Mazur
               <a href="https://www.upwork.com/freelancers/~014c651bd5eec9e575" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:var(--purple-light);border:1px solid var(--purple);border-radius:4px;color:var(--purple-mid);text-decoration:none;font-size:11px;line-height:1;flex-shrink:0;">↗</a>
             </div>
-            <div class="testi-role">Python Scraper · ⭐⭐⭐⭐⭐ on <img src="assets/img/upwork.svg" alt="Upwork" style="height:20px;vertical-align:middle; margin-left: 2px; margin-bottom: -2px;"></div>
+            <div class="testi-role">Python Scraper · ⭐⭐⭐⭐⭐ on <img src="assets/img/upwork.svg" alt="Upwork" width="20" height="20" style="height:20px;vertical-align:middle; margin-left: 2px; margin-bottom: -2px;"> </div>
           </div>
         </div>
       </div>
@@ -290,10 +296,22 @@
     <div class="eyebrow">Book a call</div>
     <h2 class="section-title" style="text-align:center;">Tell us what's costing you time</h2>
     <p class="section-sub" style="text-align:center;margin-left:auto;margin-right:auto;">Free 20-minute call. No pitch — just a conversation about your workflow and whether we can automate it.</p>
+    
     <div class="calendly-box">
       <div class="calendly-inline-widget" data-url="https://calendly.com/kaushalvyoum/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=534ab7" style="min-width:320px;height:700px;"></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
+    <script>
+      new IntersectionObserver((entries, obs) => {
+        if (entries[0].isIntersecting) {
+          const s = document.createElement('script');
+          s.src = 'https://assets.calendly.com/assets/external/widget.js';
+          s.async = true;
+          document.body.appendChild(s);
+          obs.disconnect();
+        }
+      }, { rootMargin: '200px' }).observe(document.getElementById('contact'));
+    </script>
+
   </div>
 </div>
 
